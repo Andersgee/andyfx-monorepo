@@ -1,0 +1,21 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#1A4341" x="0" y="0" width="100%" height="100%"/> 
+
+<path
+fill="#F3AC3C"
+d="M 200 150
+l 0 -100
+a 100 100 0 0 1 100 100
+z"
+/>
+
+<path
+fill="#998235"
+d="M 200 150
+l 0 -75
+a 75 75 0 0 0 0 150
+z"
+/>
+
+<circle fill="#0B2429" cx="170" cy="120" r="15"/>
+</svg>

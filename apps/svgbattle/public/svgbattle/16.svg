@@ -1,0 +1,19 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#0B2429" x="0" y="0" width="100%" height="100%"/> 
+
+<path
+transform="rotate(-45, 200 150)"
+fill="#998235"
+d="M 100 50
+l 100 0
+a 100 100 0 0 1 100 100
+l 0 100
+l -100 0
+a 100 100 0 0 1 -100 -100
+z
+"
+/>
+<circle fill="#0B2429" cx="200" cy="150" r="90"/>
+<circle fill="#F3AC3C" cx="200" cy="150" r="70"/>
+<circle fill="#0B2429" cx="200" cy="150" r="25"/>
+</svg>

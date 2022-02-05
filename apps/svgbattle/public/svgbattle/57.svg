@@ -1,0 +1,27 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#191919" x="0" y="0" width="100%" height="100%"/> 
+
+<path fill="#4F77FF"
+d="M 200 150
+m 0 -55
+l 15 0
+a 32 32 0 0 0 40 40
+l 0 30
+a 32 32 0 0 0 -40 40
+l -30 0
+a 32 32 0 0 0 -40 -40
+l 0 -30
+a 32 32 0 0 0 40 -40
+"
+>
+</path>
+<circle fill="#F9E492" cx="150" cy="100" r="22"/>
+<circle fill="#F9E492" cx="250" cy="100" r="22"/>
+<circle fill="#F9E492" cx="150" cy="200" r="22"/>
+<circle fill="#F9E492" cx="250" cy="200" r="22"/>
+
+<circle fill="#4F77FF" cx="144" cy="94" r="15"/>
+<circle fill="#4F77FF" cx="256" cy="94" r="15"/>
+<circle fill="#4F77FF" cx="144" cy="206" r="15"/>
+<circle fill="#4F77FF" cx="256" cy="206" r="15"/>
+</svg>

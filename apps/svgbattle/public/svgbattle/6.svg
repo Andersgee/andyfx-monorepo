@@ -1,0 +1,21 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300"  preserveAspectRatio="xMidYMid slice">
+<rect fill="#E3516E" x="0" y="0" width="100%" height="100%"/> 
+<path fill="#F7F3D7" 
+d="M 200 150
+l 0 100
+a 100 100 0 0 1 -100 -100
+z"
+/>
+<path fill="#51B5A9" 
+d="M 200 150
+l -100 0
+a 100 100 0 0 1 100 -100
+"
+/>
+<path fill="#FADE8B" 
+d="M 200 150
+l 0 -100
+a 100 100 0 0 1 100 100
+z"
+/>
+</svg>

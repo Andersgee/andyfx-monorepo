@@ -1,0 +1,19 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#0E2E2C" x="0" y="0" width="100%" height="100%"/>
+
+<circle fill="#F3AC3C" cx="200" cy="150"
+r="20" />
+
+<circle fill="none" stroke="#F3AC3C" cx="200" cy="150"
+stroke-width="13" r="35" />
+
+<circle fill="none" stroke="#998235" cx="200" cy="150"
+stroke-width="10" r="57" />
+
+<circle fill="none" stroke="#F3AC3C" cx="200" cy="150"
+stroke-width="8" r="80" />
+
+<circle fill="none" stroke="#F3AC3C" cx="200" cy="150"
+stroke-width="5" r="100" />
+
+</svg>

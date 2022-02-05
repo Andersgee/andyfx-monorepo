@@ -1,0 +1,22 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#243D83" x="0" y="0" width="100%" height="100%"/>
+
+<g transform="rotate(45, 200, 150)">
+<circle fill="#6592CF" r="50"
+cx="200" cy="100" />
+<circle fill="#6592CF" r="50"
+cx="200" cy="200" />
+<circle fill="#6592CF" r="50"
+cx="150" cy="150" />
+<circle fill="#6592CF" r="50"
+cx="250" cy="150" />
+
+<rect
+fill="#243D83"
+x="140" y="90"
+ width="120" height="120" />
+
+</g>
+<circle cx="200" cy="150" fill="#EEB850" r="30"/>
+
+</svg>

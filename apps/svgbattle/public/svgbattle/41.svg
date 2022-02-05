@@ -1,0 +1,48 @@
+<svg id="svg_foxhead" width="400px" height="300px" viewBox="0 0 400 300" style="cursor: pointer;">
+<rect fill="#293462" x="0" y="0" width="100%" height="100%"/> 
+
+<path fill="#FE5F55"
+d="M 150 80 
+l 10 0
+a 40 40 0 0 1 40 40
+a 40 40 0 0 1 40 -40
+l 10 0
+l 0 100
+l -10 0
+a 40 40 0 0 0 -40 40
+a 40 40 0 0 0 -40 -40
+l -10 0
+l 0 -100
+z"
+>
+</path> 
+
+<circle fill="#293462" cx="180" cy="155" r="15">
+<animate
+  attributeName="r"
+  fill="freeze"
+  dur="0.25s"
+  calcMode="spline"
+  begin="svg_foxhead.click"
+  restart="whenNotActive"
+  values="15; 10; 15"
+    keyTimes="0 ; 0.25 ; 1"
+  keySplines="0.25 1 0.5 1 ; 0.45 0 0.55 1"
+
+  />
+</circle>
+<circle fill="#293462" cx="220" cy="155" r="15">
+<animate
+  attributeName="r"
+  fill="freeze"
+  dur="0.25s"
+  calcMode="spline"
+  begin="svg_foxhead.click"
+  restart="whenNotActive"
+  values="15; 10; 15"
+    keyTimes="0 ; 0.25 ; 1"
+  keySplines="0.25 1 0.5 1 ; 0.45 0 0.55 1"
+
+  /></circle>
+
+</svg>

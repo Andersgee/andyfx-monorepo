@@ -1,0 +1,18 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<defs>
+  <clipPath id="summitTriangleClipPath">
+    <rect transform="rotate(45, 200, 150)" x="200" y="150" width="300" height="300" />    
+  </clipPath>
+</defs>
+<rect fill="#191919" x="0" y="0" width="100%" height="100%"/>
+<rect fill="#4F77FF" width="100%" height="100%"
+clip-path="url(#summitTriangleClipPath)"
+/>
+
+<circle fill="#F9E492" cx="200" cy="150" r="100" />
+<circle fill="#191919" cx="200" cy="150" r="100" 
+clip-path="url(#summitTriangleClipPath)"
+/>
+
+
+</svg>

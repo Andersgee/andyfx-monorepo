@@ -1,0 +1,27 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#243D83" x="0" y="0" width="100%" height="100%"/> 
+
+<ellipse fill="#6592CF" rx="50" ry="85" cx="200" cy="150"/>
+
+<ellipse fill="#6592CF" rx="50" ry="85" cx="200" cy="150"
+transform="rotate(45, 200, 150)"/>
+
+<ellipse fill="#6592CF" rx="50" ry="85" cx="200" cy="150"
+transform="rotate(90, 200, 150)"/>
+
+<ellipse fill="#6592CF" rx="50" ry="85" cx="200" cy="150"
+transform="rotate(135, 200, 150)"/>
+
+<path fill="#243D83"
+d="M 230 150
+a 30 30 0 0 1 -60 0
+l 0 -15
+A 30 30 0 0 0 185 115
+A 30 30 0 0 0 215 115
+A 30 30 0 0 0 230 135
+"/>
+
+<circle fill="#6592CF" cx="190" cy="140" r="5"/>
+<circle fill="#6592CF" cx="210" cy="140" r="5"/>
+
+</svg>

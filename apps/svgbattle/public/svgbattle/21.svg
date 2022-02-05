@@ -1,0 +1,33 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#222" x="0" y="0" width="100%" height="100%"/> 
+
+<path
+fill="#F2994A"
+transform="rotate(45, 192, 60)"
+d="M 195 60
+l 0 90
+a 10 10 0 0 0 10 10
+l 70 0
+l 0 -25
+a 5 5 1 0 0 -5 -5
+l -45 0
+l 0 -70
+z"
+/>
+
+<path
+fill="#2D9CDB"
+transform="rotate(45, 205, 240)"
+d="M 205 240 
+l 0 -90
+a 10 10 0 0 0 -10 -10
+l -70 0
+l 0 25
+a 5 5 1 0 0 5 5
+l 45 0
+l 0 70
+z"
+/>
+
+
+</svg>

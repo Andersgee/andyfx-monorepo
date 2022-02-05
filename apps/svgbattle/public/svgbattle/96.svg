@@ -1,0 +1,22 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#243D83" x="0" y="0" width="100%" height="100%"/>
+
+<circle fill="#6592CF" cx="200" cy="150"
+r="100" />
+
+<path 
+fill="none"
+stroke="#243D83"
+stroke-width="20"
+d="M 200 150
+m -75 -75
+a 75 75 0 0 1 0 150
+a 75 75 0 0 1 150 0
+a 75 75 0 0 1 0 -150
+a 75 75 0 0 1 -150 0
+z
+" />
+
+
+
+</svg>

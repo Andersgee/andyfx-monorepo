@@ -1,0 +1,19 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#09042A" x="0" y="0" width="100%" height="100%"/> 
+
+<path
+fill="#E78481"
+d="M 230 125
+A 39 39 0 1 1 230 175
+A 39 39 0 0 0 170 175
+A 39 39 0 1 1 170 125
+A 39 39 0 0 0 230 125
+z
+"
+/>
+<circle fill="#F5BB9C" cx="200" cy="100" r="30"/>
+<circle fill="#F5BB9C" cx="200" cy="200" r="30"/>
+<circle fill="#09042A" cx="140" cy="150" r="30"/>
+<circle fill="#09042A" cx="260" cy="150" r="30"/>
+
+</svg>

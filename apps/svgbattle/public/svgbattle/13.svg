@@ -1,0 +1,10 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#0B2429" x="0" y="0" width="100%" height="100%"/> 
+<path
+  fill="#F3AC3C"
+  d="M 0 0
+  L 140 0
+  L 0 140
+  "
+/>
+</svg>

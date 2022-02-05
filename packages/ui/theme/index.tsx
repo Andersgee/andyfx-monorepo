@@ -41,9 +41,7 @@ export function ThemeProvider({ children }: ProviderProps) {
   return (
     <Provider theme={theme}>
       <GlobalStyle />
-      <ThemeContext.Provider value={{ theme, toggleTheme }}>
-        {children}
-      </ThemeContext.Provider>
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>
     </Provider>
   );
 }

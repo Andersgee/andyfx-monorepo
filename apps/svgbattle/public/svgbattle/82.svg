@@ -1,0 +1,25 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#F3AC3C" x="0" y="0" width="100%" height="100%"/>
+
+<rect transform="rotate(45, 200,150)"
+fill="#1A4341"
+x="185" y="135"
+ width="30" height="30" />
+
+ <path fill="none" stroke="#998235"
+stroke-width="30"
+stroke-linecap="square"
+transform="rotate(-45, 200, 150)"
+d="
+M 200 150
+m -65 65
+v -130
+h 35
+m 60 0
+h 35
+v 35
+m 0 60
+v 35
+h -120
+ " />
+</svg>

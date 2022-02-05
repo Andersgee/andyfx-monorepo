@@ -1,0 +1,40 @@
+<svg tabindex="0" id="svg_switches" width="400px" height="300px" viewBox="0 0 400 300" style="cursor: pointer;">
+<rect fill="#62306D" x="0" y="0" width="100%" height="100%"/> 
+
+
+<rect fill="#AA445F" 
+rx="50"
+x="75" y="50" width="100" height="150"/> 
+
+<rect fill="#E38F66" 
+rx="50"
+x="225" y="100" width="100" height="150"/> 
+
+
+<circle fill="#F7EC7D" cx="125" cy="150" r="50">
+<animate
+  attributeName="cy"
+  fill="freeze"
+  dur="0.5s"
+  calcMode="spline"
+  begin="svg_switches.click"
+  restart="whenNotActive"
+  values="150; 100; 150"
+  keyTimes="0 ; 0.25 ; 1"
+  keySplines="0.25 1 0.5 1 ; 0.45 0 0.55 1"
+  />
+</circle>
+<circle fill="#F7EC7D" cx="275" cy="150" r="50">
+<animate
+  attributeName="cy"
+  fill="freeze"
+  dur="0.5s"
+  calcMode="spline"
+  begin="svg_switches.click"
+  restart="whenNotActive"
+  values="150; 200; 150"
+  keyTimes="0 ; 0.25 ; 1"
+  keySplines="0.25 1 0.5 1 ; 0.45 0 0.55 1"
+  />
+</circle>
+</svg>

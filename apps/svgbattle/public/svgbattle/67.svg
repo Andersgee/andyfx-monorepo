@@ -1,0 +1,40 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#191919" x="0" y="0" width="100%" height="100%"/> 
+
+<path stroke="#5DBCF9"
+stroke-width="40"
+d="M 0 100
+h 50 
+m 0 -50 
+h 150
+m 0 50 
+h 150
+m 0 -50
+h 50
+
+M 0 250
+h 50 
+m 0 -50 
+h 150
+m 0 50 
+h 150
+m 0 -50
+h 50
+"
+/>
+
+<path stroke="#5DBCF9"
+stroke-width="10"
+d="M 50 0
+v 300 
+
+M 200 0
+v 300
+
+M 350 0
+v 300
+"
+/>
+
+
+</svg>

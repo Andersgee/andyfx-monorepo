@@ -1,0 +1,19 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#FFFFFF" x="0" y="0" width="100%" height="100%"/> 
+
+<rect
+fill="#A3A368" 
+transform="rotate(45, 200, 150)"
+x="175" y="50" width="50" height="200"/> 
+
+<rect
+fill="#F3AC3C" 
+transform="rotate(135, 200, 150)"
+x="175" y="50" width="50" height="200"/> 
+
+<rect
+fill="#FBE18C" 
+transform="rotate(45, 200, 150)"
+x="175" y="125" width="50" height="50"/> 
+
+</svg>

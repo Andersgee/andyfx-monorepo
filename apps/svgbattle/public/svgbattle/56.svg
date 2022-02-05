@@ -1,0 +1,32 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#191919" x="0" y="0" width="100%" height="100%"/> 
+
+<path fill="#4F77FF"
+d="M 200 150
+m 0 -70
+a 60 60 0 0 1 60 60
+l 0 30
+a 10 10 0 0 1 -10 10
+l -10 0
+l 0 10
+a 20 20 0 0 1 -20 20
+l -40 0
+a 20 20 0 0 1 -20 -20
+l 0 -10
+l -10 0
+a 10 10 0 0 1 -10 -10
+l 0 -30
+a 60 60 0 0 1 60 -60
+"
+>
+</path>
+<circle fill="#191919" cx="175" cy="150" r="20"/>
+<circle fill="#191919" cx="225" cy="150" r="20"/>
+<circle fill="#191919" cx="200" cy="180" r="10"/>
+
+<rect fill="#191919" x="180" y="200" rx="5" width="10" height="20"/>
+<rect fill="#191919" x="195" y="200" rx="5" width="10" height="20"/>
+<rect fill="#191919" x="210" y="200" rx="5" width="10" height="20"/>
+
+
+</svg>

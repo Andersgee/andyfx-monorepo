@@ -1,0 +1,40 @@
+<svg id="svg_wrench" width="400px" height="300px" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+<rect fill="#1A4341" x="0" y="0" width="100%" height="100%"/> 
+
+<circle fill="#F3AC3C" cx="200" cy="150" r="50"/>
+
+<path fill="none"
+stroke="#F3AC3C"
+stroke-width="10"
+stroke-linecap="round"
+d="M 200 55
+l 0 170
+"
+/>
+
+<path fill="none"
+transform="rotate(60, 200, 150)"
+stroke="#F3AC3C"
+stroke-width="10"
+stroke-linecap="round"
+d="M 200 55
+l 0 170
+"
+/>
+
+<path fill="none"
+transform="rotate(120, 200, 150)"
+stroke="#F3AC3C"
+stroke-width="10"
+stroke-linecap="round"
+d="M 200 55
+l 0 170
+"
+/>
+
+<circle fill="#998235" cx="185" cy="135" r="15"/>
+<circle fill="#998235" cx="200" cy="175" r="10"/>
+<circle fill="#998235" cx="225" cy="125" r="5"/>
+
+
+</svg>

@@ -1,0 +1,40 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#998235" x="0" y="0" width="100%" height="100%"/> 
+
+<clipPath id="svg_elephant_ears_clippath">
+<ellipse rx="40" ry="90"  cx="100" cy="150" r="90"/>
+<ellipse rx="40" ry="90" cx="300" cy="150" r="90"/>  
+</clipPath>
+
+<ellipse rx="40" ry="90" fill="#1A4341" cx="100" cy="150" r="90"/>
+<ellipse rx="40" ry="90" fill="#1A4341" cx="300" cy="150" r="90"/>
+
+<ellipse fill="#0B2429"
+clip-path="url(#svg_elephant_ears_clippath)"
+rx="125" ry="133" 
+cx="200" cy="150"/>
+
+<circle fill="#1A4341" cx="200" cy="150" r="90"/>
+
+<path fill="#0B2429"
+stroke="#998235"
+stroke-width="10"
+d="M 185 155
+a 15 15 0 0 1 -30 0
+M 215 155
+a 15 15 0 0 0 30 0
+" />
+
+<path fill="none"
+stroke="#FFFFFF"
+stroke-width="20"
+d="M 150 255
+a 50 50 0 0 1 100 0
+" />
+
+<rect fill="#0B2429"
+rx="20"
+x="180" y="185" width="40" height="150"
+/>
+
+</svg>

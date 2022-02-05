@@ -1,0 +1,73 @@
+<svg id="svg_hippo" width="400px" height="300px" viewBox="0 0 400 300" style="cursor: pointer;">
+<rect fill="#191919" x="0" y="0" width="100%" height="100%"/> 
+
+<ellipse fill="#000000"
+stroke="#FE5F55"
+stroke-width="5"
+transform="rotate(45, 160, 80)"
+cx="160" cy="80" rx="12" ry="8" />
+
+<ellipse fill="#000000"
+stroke="#FE5F55"
+stroke-width="5"
+transform="rotate(-45, 240, 80)"
+cx="240" cy="80" rx="12" ry="8" />
+
+<rect fill="#FE5F55" 
+x="135" y="70"
+rx="60" width="130" height="170" />
+<path 
+fill="#A64942"
+d="M 220 145
+a 55 55 0 0 1 55 55
+a 45 45 0 0 1 -45 45
+h -60
+a 45 45 0 0 1 -45 -45
+a 55 55 0 0 1 55 -55
+" />
+<circle fill="#000000" 
+cx="165" cy="130" r="5"/>
+<circle fill="#000000" 
+cx="235" cy="130" r="5"/>
+
+<g
+transform="translate(200,180) scale(1,1)"
+>
+
+<ellipse fill="#000000"
+transform="rotate(-45, -40, 0)"
+cx="-40" rx="15" ry="10">
+<animate
+attributeName="ry"
+dur="0.5s"
+begin="svg_hippo.click"
+restart="whenNotActive"
+values="10; 13; 10"
+calcMode="spline"
+keyTimes="0; 0.5; 1"
+keySplines="0.65, 0, 0.35, 1; 0.65, 0, 0.35, 1"
+/>
+</ellipse>
+
+<ellipse fill="#000000"
+transform="rotate(45, 40, 0)"
+cx="40" rx="15" ry="10">
+<animate
+attributeName="ry"
+dur="0.5s"
+begin="svg_hippo.click"
+restart="whenNotActive"
+values="10; 13; 10"
+calcMode="spline"
+keyTimes="0; 0.5; 1"
+keySplines="0.65, 0, 0.35, 1; 0.65, 0, 0.35, 1"
+/>
+</ellipse>
+
+
+
+</g>
+
+
+
+</svg>

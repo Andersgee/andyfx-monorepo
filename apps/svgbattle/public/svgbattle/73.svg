@@ -1,0 +1,62 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<defs>
+<clipPath id="svg_happytiger_head_clippath">
+<path id="svg_happytiger_head" fill="#998235"
+d="M 275 170
+a 60 60 0 0 1 -60 60
+l -30 0
+a 60 60 0 0 1 -60 -60
+l 0 -20
+a 75 75 0 0 1 150 0
+" />  
+</clipPath>
+</defs>
+
+<rect fill="#F3AC3C" x="0" y="0" width="100%" height="100%"/> 
+<rect fill="#998235" x="0" y="0" width="100%" height="100%"
+clip-path="url(#svg_happytiger_head_clippath)"
+/> 
+
+<circle fill="#998235" cx="150" cy="100" r="30"/>
+<circle fill="#998235" cx="250" cy="100" r="30"/>
+
+<circle fill="#1A4341" cx="150" cy="100" r="20"/>
+<circle fill="#1A4341" cx="250" cy="100" r="20"/>
+
+
+<use href="#svg_happytiger_head"/>
+
+<path
+clip-path="url(#svg_happytiger_head_clippath)"
+fill="#1A4341"
+d="M 200 100
+l 50 -50
+h -100
+"
+/>
+
+<circle fill="#1A4341" cx="160" cy="150" r="10"/>
+<circle fill="#1A4341" cx="240" cy="150" r="10"/>
+
+<path fill="#FFFFFF"
+d="M 200 175
+h 40
+a 10 10 0 0 1 10 10
+a 30 30 0 0 1 -30 30
+h -40
+a 30 30 0 0 1 -30 -30
+a 10 10 0 0 1 10 -10
+" />
+
+<path fill="none"
+stroke="#1A4341"
+stroke-width="10"
+stroke-linecap="butt"
+d="M 200 165
+v 20
+a 15 15 0 0 0 30 0
+m -30 0
+a 15 15 0 0 1 -30 0
+" />
+
+</svg>

@@ -1,11 +1,15 @@
 version: "3.8"
 
 services:
-  web:
-    image: andersgee/web
+  portfolio:
+    image: andersgee/portfolio
     ports:
       - 3000:3000
-  docs:
-    image: andersgee/docs
+  svgbattle:
+    image: andersgee/svgbattle
     ports:
       - 3001:3000
+  api2:
+    image: andersgee/api2
+    ports:
+      - 4000:4000

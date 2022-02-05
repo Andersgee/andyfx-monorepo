@@ -3,31 +3,62 @@ import NextHead from "next/head";
 interface Props {
   title: string;
   description: string;
+  /**
+   * The domain where icons, manifest etc lives
+   *
+   * for example https://www.andyfx.se (WITHOUT slash)
+   */
+  domainUrl: string;
+  /**
+   * The url of this specific page
+   *
+   * for example https://www.andyfx.se/contact
+   */
+  url: string;
+  /**
+   * A space separated string of words
+   */
+  keywords?: string;
+  /**
+   * the image shown when linking. should be large like 400?
+   * default to icon but important to not forget this one
+   */
   image?: string;
+  /**
+   * label1, data1 describes an extra "info card" when sharing. used by slack for example
+   */
+  twitter_label1?: string;
+  twitter_data1?: string;
+  /**
+   * label2, data2 describes an extra "info card" when sharing. used by slack for example
+   */
+  twitter_label2?: string;
+  twitter_data2?: string;
 }
 
 /**
  * meta tags for Search Engine Optimization (SEO) and page title
  */
-export function Head({ title, description, image = "/images/andyfx-192x192.png" }: Props) {
-  const PUBLIC_URL = "https://andynextstarter.andyfx.net";
-
-  const domain = "andynextstarter.andyfx.net";
-  const url = "https://nexttemplate.andyfx.net/";
-  const icon16 = "/icons/icon-16x16.png";
-  const icon32 = "/icons/icon-32x32.png";
-  const manifest = "/manifest.json";
+export function Head({
+  title,
+  description,
+  domainUrl,
+  url,
+  keywords = "andyfx",
+  image = "/icons/icon-192x192.png",
+  twitter_label1 = "",
+  twitter_data1 = "",
+  twitter_label2 = "",
+  twitter_data2 = "",
+}: Props) {
+  //const url = "https://www.andyfx.se/";
+  const imageUrl = `${domainUrl}${image}`;
+  const icon16 = `${domainUrl}/icons/icon-16x16.png`;
+  const icon32 = `${domainUrl}/icons/icon-32x32.png`;
+  const manifest = `${domainUrl}/manifest.json`;
   const themeColor = "#A2D1F1"; //control the browser theme?
-  const keywords = "nextjs12 andynextstarter";
+  //const keywords = "nextjs12 andynextstarter";
 
-  const info1 = {
-    label: "Whats the name?",
-    data: "andynextstarter",
-  };
-  const info2 = {
-    label: "What is it?",
-    data: "nextjs project boilerplate",
-  };
   return (
     <NextHead>
       <meta charSet="utf-8" />
@@ -36,7 +67,7 @@ export function Head({ title, description, image = "/images/andyfx-192x192.png" 
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="description" content={description} />
       <meta name="author" content="Anders Gustafsson" />
-      <link rel="apple-touch-icon" href={image} />
+      <link rel="apple-touch-icon" href={imageUrl} />
       <link rel="manifest" href={manifest} />
       <title>{title}</title>
 
@@ -50,22 +81,22 @@ export function Head({ title, description, image = "/images/andyfx-192x192.png" 
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={imageUrl} />
 
       {/* twitter card tags additive with the og: tags*/}
-      <meta name="twitter:domain" content={domain} />
+      <meta name="twitter:domain" content={domainUrl} />
       <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={imageUrl} />
 
       {/* additional info Left*/}
-      <meta name="twitter:label1" content={info1.label} />
-      <meta name="twitter:data1" content={info1.data} />
+      {twitter_label1 && <meta name="twitter:label1" content={twitter_label1} />}
+      {twitter_data1 && <meta name="twitter:data1" content={twitter_data1} />}
       {/* additional info Right*/}
-      <meta name="twitter:label2" content={info2.label} />
-      <meta name="twitter:data2" content={info2.data} />
+      {twitter_label2 && <meta name="twitter:label2" content={twitter_label2} />}
+      {twitter_data2 && <meta name="twitter:data2" content={twitter_data2} />}
     </NextHead>
   );
 }

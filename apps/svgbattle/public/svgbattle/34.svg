@@ -1,0 +1,29 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#007065" x="0" y="0" width="100%" height="100%"/> 
+
+
+<path
+fill="#00A79D"
+d="M 200 140
+l 130 100
+l -260 0
+z"
+/>
+
+<path
+fill="#F5C181"
+d="M 200 95
+l 130 100
+l -260 0
+z"
+/>
+
+<path
+fill="#FFEECF"
+d="M 200 50
+l 130 100
+l -260 0
+z"
+/>
+
+</svg>

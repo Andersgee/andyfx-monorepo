@@ -1,0 +1,39 @@
+<svg id="svg_windmill" width="400px" height="300px" viewBox="0 0 400 300" style="cursor: pointer" preserveAspectRatio="xMidYMid slice">
+<rect fill="#191919" x="0" y="0" width="100%" height="100%"/> 
+
+<path fill="#F9E492"
+d="M 100 150
+a 50 50 0 0 1 100 0
+a 50 50 0 0 0 100 0
+"
+>
+<animateTransform
+attributeName="transform"
+type="rotate"
+dur="0.5s"
+begin="svg_windmill.click"
+restart="whenNotActive"
+values="0 200 150; 180 200 150"
+calcMode="spline"
+keyTimes="0; 1"
+keySplines="0.65, 0, 0.35, 1"/>
+</path>
+
+<path fill="#4F77FF"
+d="M 200 50
+a 50 50 0 0 1 0 100
+a 50 50 0 0 0 0 100
+"
+>
+<animateTransform
+attributeName="transform"
+type="rotate"
+dur="0.5s"
+begin="svg_windmill.click"
+restart="whenNotActive"
+values="0 200 150; 180 200 150"
+calcMode="spline"
+keyTimes="0; 1"
+keySplines="0.65, 0, 0.35, 1"/>
+</path>
+</svg>

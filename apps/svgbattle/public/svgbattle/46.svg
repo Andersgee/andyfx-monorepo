@@ -1,0 +1,19 @@
+<svg id="svg_wrench" width="400px" height="300px" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+<rect fill="#293462" x="0" y="0" width="100%" height="100%"/> 
+
+<circle fill="#FFF1C1" cx="200" cy="150" r="100"/>
+
+<path fill="#FE5F55"
+clip-path="circle(100) view-box"
+d="M 85 235
+l 50 -50
+l 20 20
+l 90 -90
+l 120 120
+l -60 60
+"
+/>
+
+
+
+</svg>

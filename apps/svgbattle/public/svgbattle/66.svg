@@ -1,0 +1,32 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#191919" x="0" y="0" width="100%" height="100%"/> 
+
+<rect fill="#F2AD43" 
+x="80" y="100"
+width="240" height="80" />
+
+<circle fill="#191919"
+r="50" cx="80" cy="150" />
+
+<circle fill="#191919"
+r="50" cx="320" cy="150" />
+
+<circle fill="#191919"
+r="100" cx="260" cy="260" />
+
+<circle fill="#191919"
+r="100" cx="140" cy="260" />
+
+<rect fill="#191919" rx="10" 
+x="160" y="80" width="80" height="50"/>
+
+<rect fill="#F2AD43"
+x="190" y="110" width="20" height="20"/>
+
+<circle fill="#F2AD43"
+r="5" cx="190" cy="110" />
+
+<circle fill="#F2AD43"
+r="5" cx="210" cy="110" />
+
+</svg>

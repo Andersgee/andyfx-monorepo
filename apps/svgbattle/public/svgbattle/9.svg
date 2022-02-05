@@ -1,0 +1,7 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300"  preserveAspectRatio="xMidYMid slice">
+<rect fill="#222730" x="0" y="0" width="100%" height="100%"/> 
+<rect fill="#4CAAB3" x="0" y="75" width="100%" height="150"/>
+<rect fill="#222730" x="75" y="25" width="250" height="250" transform="rotate(45, 200, 150)"/>
+<rect fill="#4CAAB3" x="125" y="75" width="150" height="150" transform="rotate(45, 200, 150)"/>
+<circle fill="#393E46" cx="200" cy="150" r="25"/>
+</svg>

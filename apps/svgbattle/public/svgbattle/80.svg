@@ -1,0 +1,89 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<defs>
+<clipPath id="pianokeyAclippath">
+<path
+d="m 5 0
+h 10
+v 30
+h 5
+v 30
+a 5 5 0 0 1 -5 5
+h -10
+a 5 5 0 0 1 -5 -5
+v -55
+a 5 5 0 0 1 5 -5
+"/>
+</clipPath>
+<clipPath id="pianokeyBclippath">
+<path
+d="
+m 5 0
+h 10
+v 30
+h 5
+v 30
+a 5 5 0 0 1 -5 5
+h -10
+a 5 5 0 0 1 -5 -5
+v -30
+h 5
+v -30
+" />
+</clipPath>
+<clipPath id="pianokeyCclippath">
+  <path
+d="
+m 5 0
+h 10
+a 5 5 0 0 1 5 5
+v 55
+a 5 5 0 0 1 -5 5
+h -10
+a 5 5 0 0 1 -5 -5
+v -30
+h 5
+v -30
+" />
+</clipPath>
+
+</defs>
+<rect fill="#998235" x="0" y="0" width="100%" height="100%"/>
+
+<rect fill="#191919"
+rx="10" x="110" y="105"
+width="180" height="95" /> 
+
+<rect fill="#FFFFFF" width="100%" height="100%"
+transform="translate(115,130)"
+clip-path="url(#pianokeyAclippath)"
+/>
+
+<rect fill="#FFFFFF" width="100%" height="100%"
+transform="translate(140,130)"
+clip-path="url(#pianokeyBclippath)"
+/>
+
+<rect fill="#FFFFFF" width="100%" height="100%"
+transform="translate(165,130)"
+clip-path="url(#pianokeyCclippath)"
+/>
+
+<rect fill="#FFFFFF" width="100%" height="100%"
+transform="translate(190,130)"
+clip-path="url(#pianokeyAclippath)"
+/>
+
+<rect fill="#FFFFFF" width="100%" height="100%"
+transform="translate(215,130)"
+clip-path="url(#pianokeyBclippath)"
+/>
+<rect fill="#FFFFFF" width="100%" height="100%"
+transform="translate(240,130)"
+clip-path="url(#pianokeyBclippath)"
+/>
+<rect fill="#FFFFFF" width="100%" height="100%"
+transform="translate(265,130)"
+clip-path="url(#pianokeyCclippath)"
+/>
+
+</svg>

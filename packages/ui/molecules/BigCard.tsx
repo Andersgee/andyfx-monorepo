@@ -93,7 +93,7 @@ interface ActionButtonProps {
 
 const ActionButton = styled.a<ActionButtonProps>`
   border-radius: 3em;
-  background: ${(props) => (props.background ? props.background : "linear-gradient(135deg, #a68d6e, #d3bfa6)")};
+  background: ${(props) => props.background || "linear-gradient(135deg, #a68d6e, #d3bfa6)"};
   padding: 1rem 3rem;
   font-size: ${(props) => props.theme.font.size.small};
   font-weight: ${(props) => props.theme.font.weight.bold};

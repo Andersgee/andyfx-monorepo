@@ -1,0 +1,17 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#AA445F" x="0" y="0" width="100%" height="100%"/> 
+
+<path
+fill="#F7EC7D"
+d="M 175 250
+a 100 100 0 0 1 0 -200
+"
+/>
+
+<path
+fill="#E38F66"
+d="M 225 250
+a 100 100 0 0 0 0 -200
+"
+/>
+</svg>

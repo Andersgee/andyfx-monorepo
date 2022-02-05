@@ -1,0 +1,22 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#191919" x="0" y="0" width="100%" height="100%"/> 
+
+<clipPath id="svg_sunset_clippath">
+<rect rx="25" x="125" y="50" width="150" height="200" />  
+</clipPath>
+
+<rect fill="#F2AD43" rx="75"
+clip-path="url(#svg_sunset_clippath)"
+x="125" y="50" width="150" height="300" />
+
+<circle fill="#FFF58F" cx="200" cy="170" r="30"/>
+
+<circle fill="#E08027"
+clip-path="url(#svg_sunset_clippath)"
+cx="130" cy="240" r="90"/>
+
+<circle fill="#824B20"
+clip-path="url(#svg_sunset_clippath)"
+cx="270" cy="240" r="90"/>
+
+</svg>

@@ -1,0 +1,64 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#14313E" x="0" y="0" width="100%" height="100%"/>
+
+<rect fill="#FFDF00" x="60" y="70"
+rx="20" width="280" height="155" />
+
+<rect fill="#FFDF00" x="50" y="130"
+rx="5" width="300" height="40" />
+
+<rect fill="#14313E" x="85" y="95"
+rx="10" width="230" height="105" />
+
+<rect fill="#14313E" x="100" y="0"
+width="200" height="300" />
+
+<path transform="translate(0,-7) rotate(45, 200, 153)"
+fill="#FFDF00"
+d="M 200 150
+m 15 2
+v 50
+h 25
+v 20
+h -30
+v 30
+a 7 7 0 0 1 -7 7
+h -6
+a 7 7 0 0 1 -7 -7
+v -30
+h -30
+v -20
+h 25
+v -145
+l 15 -15
+l 15 15
+
+" />
+
+<path transform="translate(0,-7) rotate(-45, 200, 153)"
+stroke="#14313E"
+stroke-width="20"
+stroke-linejoin="bevel"
+paint-order="stroke fill"
+fill="#FFDF00"
+d="M 200 150
+m 15 2
+v 50
+h 25
+v 20
+h -30
+v 30
+a 7 7 0 0 1 -7 7
+h -6
+a 7 7 0 0 1 -7 -7
+v -30
+h -30
+v -20
+h 25
+v -145
+l 15 -15
+l 15 15
+z
+" />
+
+</svg>

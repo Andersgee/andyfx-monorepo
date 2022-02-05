@@ -1,0 +1,39 @@
+<svg id="svg_wearamask" width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#293462" x="0" y="0" width="100%" height="100%"/> 
+
+<path
+fill="none"
+stroke="#FFF1C1"
+stroke-width="10"
+d="M 200 110
+m 100 0
+a 25 25 0 0 1 0 50
+l -200 0
+a 25 25 0 0 1 0 -50
+z
+"
+/>
+
+<path
+fill="#FFF1C1"
+d="M 200 110
+m 70 0
+l 0 50
+a 40 40 0 0 1 -40 40
+l -60 0
+a 40 40 0 0 1 -40 -40
+l 0 -50
+z
+"
+/>
+
+
+<rect fill="#FE5F55"
+rx="5"
+x="150" y="125" width="40" height="10"/> 
+
+<rect fill="#FE5F55"
+rx="5"
+x="150" y="145" width="40" height="10"/> 
+
+</svg>

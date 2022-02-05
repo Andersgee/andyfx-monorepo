@@ -1,0 +1,44 @@
+<svg id="svg_pastellogo" width="400px" height="300px" viewBox="0 0 400 300" style="cursor: pointer;">
+<rect fill="#19191A" x="0" y="0" width="100%" height="100%"/> 
+
+
+<defs>
+
+<filter id="svg_pastellogo_circlefilter">
+<feFlood result="floodFill"
+x="0" y="130" width="200" height="170"
+flood-color="#9AD5FF" flood-opacity="1"/>
+<feComposite
+in="floodFill"
+in2="SourceGraphic"
+operator="atop"/>
+</filter>
+
+</defs>
+
+
+<rect fill="#F9E492"
+x="125" y="130" width="75" height="120"
+/> 
+
+<circle fill="#4F77FF"
+r="75"
+cx="200" cy="130"
+style="filter: url(#svg_pastellogo_circlefilter)">
+
+<animate
+attributeName="r"
+fill="freeze"
+dur="0.25s"
+calcMode="spline"
+begin="svg_pastellogo.click"
+restart="whenNotActive"
+values="75; 50; 75"
+keyTimes="0 ; 0.5 ; 1"
+keySplines="0.25 1 0.5 1; 0.25 1 0.5 1"
+/>
+
+</circle>
+
+
+</svg>

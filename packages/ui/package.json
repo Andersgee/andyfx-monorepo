@@ -9,6 +9,8 @@
     "@types/react-dom": "^17.0.11",
     "@types/styled-components": "^5.1.21",
     "config": "*",
+    "react": "^17.0.2",
+    "react-is": "^17.0.2",
     "styled-components": "^5.3.3",
     "tsconfig": "*",
     "typescript": "^4.5.3",

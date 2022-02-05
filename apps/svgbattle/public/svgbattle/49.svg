@@ -1,0 +1,31 @@
+<svg id="svg_wrench" width="400px" height="300px" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+<rect fill="#6592CF" x="0" y="0" width="100%" height="100%"/> 
+
+<rect fill="#243D83"
+rx="10"
+x="125" y="130" width="150" height="120"/> 
+
+<path fill="#243D83"
+d="M 200 50
+l 100 100
+l -200 0
+"
+/>
+
+<rect fill="#EEB850"
+rx="5"
+x="150" y="145" width="100" height="10"/> 
+
+<path fill="#EEB850"
+d="M 215 200
+a 10 10 0 0 1 10 10
+l 0 40
+l -50 0
+l 0 -40
+a 10 10 0 0 1 10 -10
+
+"
+/>
+
+
+</svg>

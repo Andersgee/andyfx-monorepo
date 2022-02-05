@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import { ThemeContext } from "../../theme/index";
+import { ThemeContext } from "../theme";
 import { CheckboxHidden } from "../atoms/CheckboxHidden";
 
 interface Props {
   className?: string;
 }
 
-export default function ToggleThemeButton({ className }: Props) {
+export function ToggleThemeButton({ className }: Props) {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const isDarkMode = theme.name === "dark";
 

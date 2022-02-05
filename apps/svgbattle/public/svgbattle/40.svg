@@ -1,0 +1,34 @@
+<svg id="svg_letterb" width="400px" height="300px" viewBox="0 0 400 300" style="cursor: pointer;">
+<rect fill="#6592CF" x="0" y="0" width="100%" height="100%"/> 
+
+<path fill="none"
+stroke="#243D83"
+stroke-width="50"
+d="M 200 70 
+  a 80 80 0 1 1 -80 80 
+  l 0 -105"
+>
+<animate
+  attributeName="d"
+  fill="freeze"
+  dur="0.25s"
+  calcMode="spline"
+  begin="svg_letterb.click"
+  restart="whenNotActive"
+  values="M 200 70 
+  a 80 80 0 1 1 -80 80 
+  l 0 -105;
+
+  M 220 70 
+  a 100 100 0 1 1 -100 100 
+  l 0 -125;
+  
+  M 200 70 
+  a 80 80 0 1 1 -80 80 
+  l 0 -105"
+  keyTimes="0 ; 0.25 ; 1"
+  keySplines="0.25 1 0.5 1 ; 0.45 0 0.55 1"
+  />
+</path> 
+
+</svg>

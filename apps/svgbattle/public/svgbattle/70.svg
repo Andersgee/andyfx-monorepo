@@ -1,0 +1,35 @@
+<svg width="400px" height="300px" viewBox="0 0 400 300">
+<rect fill="#293462" x="0" y="0" width="100%" height="100%"/> 
+
+<path fill="#FE5F55"
+d="M 200 120
+h 25
+a 50 50 0 0 1 50 50
+a 200 200 0 0 1 -150 0
+a 50 50 0 0 1 50 -50
+" 
+/>
+
+<path fill="#A64942"
+d="M 275 170
+a 200 200 0 0 1 -150 0
+a 45 45 0 0 0 45 45
+h 60
+a 45 45 0 0 0 45 -45
+" 
+/>
+
+<circle fill="#FE5F55" cx="160" cy="120" r="25"/>
+<circle fill="#FFF1C1" cx="160" cy="120" r="15"/>
+<circle fill="#293462" cx="160" cy="120" r="5"/>
+
+<circle fill="#FE5F55" cx="230" cy="120" r="25"/>
+<circle fill="#FFF1C1" cx="230" cy="120" r="15"/>
+<circle fill="#293462" cx="230" cy="120" r="5"/>
+
+<circle fill="#293462" cx="210" cy="170" r="5"/>
+<circle fill="#293462" cx="190" cy="170" r="5"/>
+
+
+
+</svg>
