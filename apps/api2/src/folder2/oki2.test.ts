@@ -5,13 +5,13 @@ function sum(a: number, b: number) {
 }
 
 interface Apa {
-  k: number;
+  b: number;
   yep: string;
 }
 
 test("some function", () => {
-  const a: Apa = { k: 5, yep: "hmm" };
-  expect(sum(2, 3)).toBe(a.k);
+  const a: Apa = { b: 5, yep: "hmm" };
+  expect(sum(2, 3)).toBe(a.b);
 });
 
 test("some function3", () => {

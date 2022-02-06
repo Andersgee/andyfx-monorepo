@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 //const kek = "kek";
 
 app.get("/", async (req: Request, res: Response) => {
-  res.json({ hello: `world ${oki2(8)}` });
+  res.json({ hello: `world ${oki2(8) * 99}` });
 });
 
 const PORT = 4000;
