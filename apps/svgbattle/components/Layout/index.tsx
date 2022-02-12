@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Signature } from "ui/molecules/Signature";
 import { Navbar } from "ui/molecules/Navbar";
-import AndyfxSvg from "ui/icons/andyfx.svg";
+import { AndyfxSvg } from "ui/molecules/AndyfxSvg";
 
 interface Props {
   className?: string;

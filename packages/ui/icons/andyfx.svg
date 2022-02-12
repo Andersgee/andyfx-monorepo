@@ -1,6 +1,7 @@
 <svg width="120" height="100" viewBox="0 0 120 100">
 <title>Andyfx Logo</title>
 <path
+id="andyfxsvgp1"
 fill="none"
 stroke-width="11"
 stroke-linecap="round"
@@ -27,6 +28,7 @@ d="M 18 92 L 39 30 L 75 80 L 102 8"
 </path>
 
 <path
+id="andyfxsvgp2"
 fill="none"
 stroke-width="11"
 stroke-linecap="round"

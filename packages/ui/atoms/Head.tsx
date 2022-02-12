@@ -52,10 +52,17 @@ export function Head({
   twitter_data2 = "",
 }: Props) {
   //const url = "https://www.andyfx.se/";
+  /*
   const imageUrl = `${domainUrl}${image}`;
   const icon16 = `${domainUrl}/icons/icon-16x16.png`;
   const icon32 = `${domainUrl}/icons/icon-32x32.png`;
   const manifest = `${domainUrl}/manifest.json`;
+*/
+  const imageUrl = `${image}`;
+  const icon16 = `/icons/icon-16x16.png`;
+  const icon32 = `/icons/icon-32x32.png`;
+  const manifest = `/manifest.json`;
+
   const themeColor = "#A2D1F1"; //control the browser theme?
   //const keywords = "nextjs12 andynextstarter";
 

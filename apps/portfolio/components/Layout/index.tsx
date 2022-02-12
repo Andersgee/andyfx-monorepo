@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Signature } from "ui/molecules/Signature";
 import { Navbar } from "ui/molecules/Navbar";
-import AndyfxSvg from "ui/icons/andyfx.svg";
+import { AndyfxSvg } from "ui/molecules/AndyfxSvg";
 
 interface Props {
   className?: string;
@@ -13,7 +13,7 @@ export function Layout({ className, children }: Props) {
     <Container className={className}>
       <Nav links={[]} />
       <Header>
-        <Logo aria-label="Andyfx Logo" />
+        <Logo />
         <Title>Andyfx</Title>
       </Header>
       <Main>{children}</Main>
