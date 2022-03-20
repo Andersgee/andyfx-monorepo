@@ -1,27 +1,26 @@
-import express, { Request, Response } from "express";
-import cors from "cors";
-//import fetch from "node-fetch";
-import { oki } from "./folder1/oki";
-import { oki2 } from "src/folder2/oki2";
-
-//const kek = await fetch("https://www.google.com").then((res) => res.text());
+import "dotenv-flow/config";
+import express from "express";
+import reddit from "./reddit";
+import openweathermap from "./openweathermap";
 
 const app = express();
-app.use(cors());
 app.use(express.json());
+
 app.use((req, res, next) => {
-  //console.log(req.method, req.path, req.body);
-  console.log(req.method, req.path);
+  console.log(req.method, req.path, req.body);
   next();
 });
 
-//const kek = "kek";
+app.use("/reddit", reddit);
+app.use("/openweathermap", openweathermap);
 
-app.get("/", async (req: Request, res: Response) => {
-  res.json({ hello: `world ${oki2(8) * 99}` });
+/*
+app.get("/", async (req, res) => {
+  res.json({ hello: "world" });
 });
+*/
 
-const PORT = 4000;
+const PORT = parseInt(process.env.PORT || "4000", 10);
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`ready - started server on 0.0.0.0:${PORT}, url: http://localhost:${PORT}`);
 });
