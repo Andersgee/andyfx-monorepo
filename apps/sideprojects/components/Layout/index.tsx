@@ -15,6 +15,7 @@ export function Layout({ className, children }: Props) {
         links={[
           ["home", "/"],
           ["news", "/news"],
+          ["weather", "/weather"],
         ]}
       />
       <Header>

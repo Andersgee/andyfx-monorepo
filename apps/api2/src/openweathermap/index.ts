@@ -18,10 +18,10 @@ router.use(
 
 //router.use(cors());
 
-router.get("/", async (req: Request, res: Response) => {
+router.post("/", async (req: Request, res: Response) => {
   try {
     const lon = req.body.lon as number;
-    const lat = req.body.lon as number;
+    const lat = req.body.lat as number;
     const r = await fetchweather(lon, lat);
     //console.log("r:", r);
     return res.status(200).json(r);
