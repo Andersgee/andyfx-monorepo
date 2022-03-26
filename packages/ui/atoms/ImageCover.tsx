@@ -1,12 +1,20 @@
 import NextImage from "next/image";
 import styled from "styled-components";
 
-interface Props {
+export interface StaticImageData {
   src: string;
+  height: number;
+  width: number;
+  blurDataURL?: string;
+}
+
+interface Props {
+  src: string | StaticImageData;
   alt: string;
   width: string;
   height: string;
   position?: string;
+  priority?: boolean;
   className?: string;
 }
 
@@ -14,11 +22,21 @@ interface Props {
  * Fills (covers) width and height.
  *
  * width and height must be supplied.
+ *
+ * default position="center center"
  */
-export function ImageCover({ src, alt, width, height, position = "center center", className }: Props) {
+export function ImageCover({
+  src,
+  alt,
+  width,
+  height,
+  position = "center center",
+  priority = false,
+  className,
+}: Props) {
   return (
     <Container width={width} height={height} className={className}>
-      <NextImage src={src} alt={alt} layout="fill" objectFit="cover" objectPosition={position} />
+      <NextImage src={src} alt={alt} layout="fill" objectFit="cover" objectPosition={position} priority={priority} />
     </Container>
   );
 }

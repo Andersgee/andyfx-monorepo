@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { ImageCover } from "../atoms/ImageCover";
+import { ImageCover, StaticImageData } from "../atoms/ImageCover";
 import { Link } from "../atoms/Link";
 
 interface Props {
-  imgSrc: string;
+  imgSrc: string | StaticImageData;
   imgAlt: string;
   href: string;
   title: string;

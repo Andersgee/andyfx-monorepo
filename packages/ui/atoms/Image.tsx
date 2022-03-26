@@ -1,10 +1,18 @@
 import NextImage from "next/image";
 import styled from "styled-components";
 
-interface Props {
+export interface StaticImageData {
   src: string;
+  height: number;
+  width: number;
+  blurDataURL?: string;
+}
+
+interface Props {
+  src: string | StaticImageData;
   alt: string;
   aspectRatio: number;
+  priority?: boolean;
   className?: string;
 }
 
@@ -13,11 +21,19 @@ interface Props {
  *
  * aspectRatio must be supplied.
  */
-export function Image({ src, alt, aspectRatio, className }: Props) {
+export function Image({ src, alt, aspectRatio, className, priority = false }: Props) {
   const height = `${100 / aspectRatio}%`;
   return (
     <Container className={className}>
-      <NextImage src={src} alt={alt} layout="responsive" objectFit="contain" width="100%" height={height} />
+      <NextImage
+        src={src}
+        alt={alt}
+        layout="responsive"
+        objectFit="contain"
+        width="100%"
+        height={height}
+        priority={priority}
+      />
     </Container>
   );
 }

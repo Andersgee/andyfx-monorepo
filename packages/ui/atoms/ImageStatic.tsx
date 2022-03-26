@@ -1,6 +1,6 @@
 import NextImage from "next/image";
 
-interface StaticImageData {
+export interface StaticImageData {
   src: string;
   height: number;
   width: number;
@@ -12,6 +12,7 @@ interface Props {
   alt: string;
   width?: string;
   height?: string;
+  priority?: boolean;
   className?: string;
 }
 
@@ -27,6 +28,6 @@ interface Props {
  * //pic is StaticImageData
  * ```
  */
-export function ImageStatic({ src, alt, width, height, className }: Props) {
-  return <NextImage src={src} alt={alt} className={className} width={width} height={height} />;
+export function ImageStatic({ src, alt, width, height, priority = false, className }: Props) {
+  return <NextImage src={src} alt={alt} className={className} width={width} height={height} priority={priority} />;
 }
