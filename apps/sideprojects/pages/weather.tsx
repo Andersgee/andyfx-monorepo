@@ -1,23 +1,26 @@
 import type { NextPage } from "next";
-import styled from "styled-components";
-import { Head } from "ui/atoms/Head";
-import { Layout } from "components/Layout";
+import { Head } from "ui/atoms";
+import Layout from "templates/Layout";
 import { WeatherProvider } from "contexts/Weather";
-import WeatherTable from "components/WeatherTable";
+import WeatherTable from "components/organisms/WeatherTable";
+import LoginDialog from "components/templates/LoginDialog";
 
 const Index: NextPage = () => {
   return (
-    <WeatherProvider>
-      <Head
-        title="sideprojects - weather"
-        description="Weather forecast in both visual and table form."
-        domainUrl="https://web.andyfx.se"
-        url="https://web.andyfx.se/weather"
-      />
-      <Layout>
-        <WeatherTable />
-      </Layout>
-    </WeatherProvider>
+    <>
+      <LoginDialog />
+      <WeatherProvider>
+        <Head
+          title="sideprojects - weather"
+          description="Weather forecast in both visual and table form."
+          domainUrl="https://web.andyfx.se"
+          url="https://web.andyfx.se/weather"
+        />
+        <Layout>
+          <WeatherTable />
+        </Layout>
+      </WeatherProvider>
+    </>
   );
 };
 

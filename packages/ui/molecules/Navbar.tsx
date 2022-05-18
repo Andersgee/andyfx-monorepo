@@ -1,13 +1,14 @@
-import { ReactElement, useState, useRef } from "react";
+import { useState, useRef, ReactNode } from "react";
 import styled from "styled-components";
-import { Link as DefaultLink } from "../atoms/Link";
+import DefaultLink from "../atoms/Link";
 import { useOnClickOutside } from "usehooks-ts";
-import { ToggleThemeButton } from "./ToggleThemeButton";
-import HamburgerIcon from "ui/icons/hamburger.svg";
+import MenuIcon from "ui/icons/Menu";
+import { Tooltip } from "ui/atoms";
 
 interface Props {
   className?: string;
-  links: [label: string, href: string][];
+  links?: [label: string, href: string][];
+  children?: ReactNode;
 }
 
 /**
@@ -15,7 +16,7 @@ interface Props {
  *
  * looks best with 3, 4 or 5 links
  */
-export function Navbar({ className, links }: Props): ReactElement {
+export default function Navbar({ links, children, className }: Props) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
   useOnClickOutside(ref, () => setOpen(false));
@@ -24,12 +25,17 @@ export function Navbar({ className, links }: Props): ReactElement {
   return (
     <Container className={className}>
       <NavMenu ref={ref}>
-        <MenuButton onClick={handleButtonClick} aria-label="nav-menu">
-          <Svg />
-        </MenuButton>
+        {links && (
+          <Tooltip placement="bottom-start" label="Navigation menu">
+            <MenuButton onClick={handleButtonClick} aria-label="nav-menu">
+              <MenuIcon />
+            </MenuButton>
+          </Tooltip>
+        )}
+
         <Nav>
           <Ul open={open}>
-            {links.map(([label, href], i) => (
+            {links?.map(([label, href], i) => (
               <Li key={i}>
                 <Link href={href}>{label}</Link>
               </Li>
@@ -37,14 +43,13 @@ export function Navbar({ className, links }: Props): ReactElement {
           </Ul>
         </Nav>
       </NavMenu>
-      <Buttons>
-        <ToggleThemeButton />
-      </Buttons>
+      <Buttons>{children}</Buttons>
     </Container>
   );
 }
 
 const Container = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   margin: 0;
@@ -61,6 +66,9 @@ const NavMenu = styled.div`
 `;
 
 const Buttons = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   gap: 8px;
 `;
@@ -105,32 +113,14 @@ const MenuButton = styled.button`
   @media ${(props) => props.theme.media.sm} {
     display: block;
   }
-
-  /*
-  &:hover {
-    > svg > path {
-      stroke: ${(props) => props.theme.color.text.primary};
-    }
-  }
-  */
-`;
-
-const Svg = styled(HamburgerIcon)`
-  width: 48px;
-  height: 48px;
-
-  > path {
-    stroke: ${(props) => props.theme.color.text.secondary};
-  }
 `;
 
 const Link = styled(DefaultLink)`
-  color: ${(props) => props.theme.color.text.secondary};
-  opacity: 1;
+  color: ${(props) => props.theme.color.text.primary};
+  text-decoration: none;
 
   &:hover {
-    text-decoration: none;
-    opacity: 1;
+    text-decoration: underline dotted;
   }
 
   @media ${(props) => props.theme.media.sm} {
@@ -142,13 +132,8 @@ const Link = styled(DefaultLink)`
     border-bottom: 1px dotted ${(props) => props.theme.color.text.secondary};
 
     &:hover {
+      text-decoration: none;
       background-color: ${(props) => props.theme.color.accent};
-    }
-  }
-
-  @media ${(props) => props.theme.media.md_and_above} {
-    &:hover {
-      text-decoration: underline dotted;
     }
   }
 `;

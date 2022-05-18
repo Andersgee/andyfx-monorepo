@@ -10,6 +10,6 @@ interface Props {
  * logo or icon
  * authorship information
  */
-export function Header({ children, className }: Props) {
+export default function Header({ children, className }: Props) {
   return <header className={className}>{children}</header>;
 }

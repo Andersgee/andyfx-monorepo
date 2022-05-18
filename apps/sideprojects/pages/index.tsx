@@ -1,9 +1,8 @@
 import type { NextPage } from "next";
-import styled from "styled-components";
-import { Head } from "ui/atoms/Head";
-import { Layout } from "components/Layout";
+import { Head } from "ui/atoms";
+import Layout from "templates/Layout";
 
-const HomePage: NextPage = () => {
+const Page: NextPage = () => {
   return (
     <>
       <Head
@@ -13,10 +12,10 @@ const HomePage: NextPage = () => {
         url="https://web.andyfx.se"
       />
       <Layout>
-        <div>grid of links sideprojects here maybe</div>
+        <p>Content</p>
       </Layout>
     </>
   );
 };
 
-export default HomePage;
+export default Page;

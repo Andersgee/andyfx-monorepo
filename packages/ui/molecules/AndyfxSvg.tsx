@@ -10,7 +10,7 @@ interface Props {
  * svg animation will not trigger until entire document is loaded.
  * css animation can trigger when component is loaded
  */
-export function AndyfxSvg({ className }: Props) {
+export default function AndyfxSvg({ className }: Props) {
   return (
     <svg className={className} width="120" height="100" viewBox="0 0 120 100" aria-label="Andyfx Logo">
       <title>Andyfx Logo</title>

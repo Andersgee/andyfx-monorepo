@@ -1,25 +1,20 @@
 import { useEffect, useState } from "react";
 import { defaultWeatherData } from "./weatherdata";
-
-const BASEURL = process.env.NEXT_PUBLIC_URL_OPENWEATHERMAP_API;
+import api from "lib/api";
 
 export function useWeatherData(lon: number, lat: number) {
   const [weatherData, setWeatherData] = useState(defaultWeatherData);
 
   useEffect(() => {
-    fetch(BASEURL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ lon, lat }),
-    })
-      .then((res) => res.json())
-      .then((json) => {
+    const getweather = async () => {
+      try {
+        const json = await api.post("/openweathermap", { lon, lat });
         setWeatherData(json);
-      })
-      .catch((err) => {
-        console.log(err);
-        //setWeatherData(defaultWeatherData)
-      });
+      } catch (error) {
+        console.log("error:", error);
+      }
+    };
+    getweather();
   }, [lon, lat]);
 
   return weatherData;

@@ -5,11 +5,13 @@ import { light, dark } from "./theme";
 import { useDarkMode } from "usehooks-ts";
 
 interface Props {
+  isDarkMode: boolean;
   theme: typeof light;
   toggleTheme: () => void;
 }
 
 const defaultValue: Props = {
+  isDarkMode: false,
   theme: light,
   toggleTheme: () => {},
 };
@@ -41,7 +43,7 @@ export function ThemeProvider({ children }: ProviderProps) {
   return (
     <Provider theme={theme}>
       <GlobalStyle />
-      <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>
+      <ThemeContext.Provider value={{ isDarkMode, theme, toggleTheme }}>{children}</ThemeContext.Provider>
     </Provider>
   );
 }

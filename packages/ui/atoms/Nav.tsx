@@ -8,6 +8,6 @@ interface Props {
  *
  * Common examples of navigation sections are menus, tables of contents, and indexes.
  */
-export function Nav({ children, className }: Props) {
+export default function Nav({ children, className }: Props) {
   return <nav className={className}>{children}</nav>;
 }

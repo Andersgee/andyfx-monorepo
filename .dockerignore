@@ -3,4 +3,6 @@
 **/out
 **/dist
 **/.next
+
 .git
+mongodb

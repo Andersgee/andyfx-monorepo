@@ -28,12 +28,11 @@ const common = {
     medium: "0.25s ease-in-out",
     slow: "0.5s ease-in-out",
   },
-
   font: {
     family: {
       heading: "'Montserrat', sans-serif",
       body: "'Montserrat', sans-serif",
-      code: "'Montserrat', sans-serif",
+      code: "'Lucida Console', monospace",
       monospace: "'Lucida Console', monospace",
     },
     weight: {
@@ -65,23 +64,34 @@ const common = {
   ],
 };
 
+//inspiration
 //https://color.adobe.com/create/color-wheel
 export const light = {
   ...common,
   name: "light",
   color: {
-    background: "rgba(250,250,250,1)",
-    paper: "rgba(255,255,255,1)",
-    primary: "#9CBCD9",
-    accent: "#DEA268",
+    background: "#fcfcfc",
+    paper: "#ffffff",
+    primary: "#97A7C9",
+    accent: "#97C2C9",
+    warning: "#ed6c02",
+    error: "#d32f2f",
+    info: "#0288d1",
+    success: "#2e7d32",
     text: {
-      primary: "rgba(0,0,0,0.95)",
-      secondary: "rgba(0,0,0,0.85)",
+      primary: "rgba(0,0,0,0.87)",
+      secondary: "rgba(0,0,0,0.6)",
+      disabled: "rgba(0,0,0,0.38)",
     },
     action: {
       active: "rgba(0,0,0,0.54)",
       hover: "rgba(0,0,0,0.04)",
+      focus: "rgba(0,0,0,0.12)",
       selected: "rgba(0,0,0,0.08)",
+    },
+    icon: {
+      fill: "#97A7C9",
+      hover: "#97C2C9",
     },
   },
 };
@@ -90,18 +100,28 @@ export const dark = {
   ...common,
   name: "dark",
   color: {
-    background: "rgba(22,22,22,1)",
-    paper: "rgba(32,32,32,1)",
-    primary: "#3A4752",
-    accent: "#41739E",
+    background: "#191919",
+    paper: "#202020",
+    primary: "#2A5373",
+    accent: "#298077",
+    warning: "#ffa726",
+    error: "#f44336",
+    info: "#29b6f6",
+    success: "#66bb6a",
     text: {
       primary: "rgba(255,255,255,1)",
-      secondary: "rgba(255,255,255,0.9)",
+      secondary: "rgba(255,255,255,0.7)",
+      disabled: "rgba(255,255,255,0.5)",
     },
     action: {
       active: "rgba(255,255,255,1)",
       hover: "rgba(255,255,255,0.08)",
+      focus: "rgba(255,255,255,0.12)",
       selected: "rgba(255,255,255,0.16)",
+    },
+    icon: {
+      fill: "#2A5373",
+      hover: "#298077",
     },
   },
 };

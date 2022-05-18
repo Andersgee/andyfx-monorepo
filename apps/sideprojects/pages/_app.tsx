@@ -1,10 +1,15 @@
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "ui";
+import { UserProvider } from "contexts/User";
 
-export default function App({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
-      <Component {...pageProps} />
+      <UserProvider>
+        <Component {...pageProps} />
+      </UserProvider>
     </ThemeProvider>
   );
 }
+
+export default MyApp;

@@ -1,22 +1,22 @@
 import styled from "styled-components";
 
-interface Props {
+type Props = {
   className?: string;
-  w?: number;
-  h?: number;
+  width?: number;
+  height?: number;
   x?: number | "auto";
   y?: number | "auto";
   children: React.ReactNode;
-}
+};
 
 /**
- * A div that takes up width x height inside a display: grid container
+ * A div that spans `width`, `height` inside a display: grid container
  *
- * optionally place at x,y position in grid.
+ * optionally place at position `x`, `y` in grid.
  */
-export function GridItem({ w = 1, h = 1, x = "auto", y = "auto", className, children }: Props) {
+export default function GridItem({ width = 1, height = 1, x = "auto", y = "auto", className, children }: Props) {
   return (
-    <Container className={className} x={x} y={y} w={w} h={h}>
+    <Container className={className} x={x} y={y} w={width} h={height}>
       {children}
     </Container>
   );

@@ -6,7 +6,7 @@ interface Props {
   className?: string;
 }
 
-export function Signature({ className }: Props) {
+export default function Signature({ className }: Props) {
   const ref = useRef(null);
   const entry = useIntersectionObserver(ref, { freezeOnceVisible: true });
   const isIntersecting = !!entry?.isIntersecting;

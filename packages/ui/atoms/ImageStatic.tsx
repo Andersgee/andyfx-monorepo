@@ -1,11 +1,13 @@
 import NextImage from "next/image";
 
+/*
 export interface StaticImageData {
   src: string;
   height: number;
   width: number;
   blurDataURL?: string;
 }
+*/
 
 interface Props {
   src: StaticImageData;
@@ -28,6 +30,6 @@ interface Props {
  * //pic is StaticImageData
  * ```
  */
-export function ImageStatic({ src, alt, width, height, priority = false, className }: Props) {
+export default function ImageStatic({ src, alt, width, height, priority = false, className }: Props) {
   return <NextImage src={src} alt={alt} className={className} width={width} height={height} priority={priority} />;
 }

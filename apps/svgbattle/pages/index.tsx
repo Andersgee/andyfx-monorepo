@@ -1,12 +1,8 @@
 import type { NextPage } from "next";
-import { ThemeProvider } from "ui";
-//import { Button, GridItem } from "ui/atoms";
 import styled from "styled-components";
-import { Head } from "ui/atoms/Head";
-//import shadertext from "../public/someshader.glsl";
-//import normaltext from "../public/sometext.txt";
-import { Layout } from "components/Layout";
-import { SvgMosaic } from "components/SvgMosaic";
+import { Head } from "ui/atoms";
+import Layout from "components/Layout";
+import SvgMosaic from "components/SvgMosaic";
 
 const HomePage: NextPage = () => {
   return (

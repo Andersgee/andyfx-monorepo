@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import { Link as DefaultLink } from "ui/atoms/Link";
+import DefaultLink from "ui/atoms/Link";
 import styled from "styled-components";
 
-const NotfoundPage: NextPage = () => {
+const Page: NextPage = () => {
   return (
     <Container>
       <Content>
@@ -37,4 +37,4 @@ const Title = styled.h1`
   padding-bottom: 1rem;
 `;
 
-export default NotfoundPage;
+export default Page;

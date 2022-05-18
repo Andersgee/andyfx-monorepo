@@ -1,13 +1,10 @@
 import type { NextPage } from "next";
-//import { Button, GridItem } from "ui/atoms";
 import styled from "styled-components";
-import { Head } from "ui/atoms/Head";
-//import shadertext from "../public/someshader.glsl";
-//import normaltext from "../public/sometext.txt";
-import { Layout } from "components/Layout";
-import { ProjectCards } from "components/ProjectCards";
+import Head from "ui/atoms/Head";
+import Layout from "components/Layout";
+import ProjectCards from "components/ProjectCards";
 
-const HomePage: NextPage = () => {
+const Page: NextPage = () => {
   return (
     <>
       <Head
@@ -35,4 +32,4 @@ const Introduction = styled.div`
   color: ${(props) => props.theme.color.text.secondary};
 `;
 
-export default HomePage;
+export default Page;

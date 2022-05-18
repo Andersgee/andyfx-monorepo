@@ -3,13 +3,55 @@ version: "3.8"
 services:
   portfolio:
     image: andersgee/portfolio
+    restart: unless-stopped
     ports:
-      - 3000:3000
+      - $PORT_PORTFOLIO:$PORT_PORTFOLIO
+    build:
+      context: .
+      dockerfile: ./dockerfiles/nextjs.Dockerfile
+      args:
+        - SCOPE=portfolio
+
   svgbattle:
     image: andersgee/svgbattle
+    restart: unless-stopped
     ports:
-      - 3001:3000
-  api2:
-    image: andersgee/api2
+      - $PORT_SVGBATTLE:$PORT_SVGBATTLE
+    build:
+      context: .
+      dockerfile: ./dockerfiles/nextjs.Dockerfile
+      args:
+        - SCOPE=svgbattle
+
+  sideprojects:
+    image: andersgee/sideprojects
+    restart: unless-stopped
     ports:
-      - 4000:4000
+      - $PORT_SIDEPROJECTS:$PORT_SIDEPROJECTS
+    build:
+      context: .
+      dockerfile: ./dockerfiles/nextjs.Dockerfile
+      args:
+        - SCOPE=sideprojects
+
+  api:
+    image: andersgee/api
+    restart: unless-stopped
+    ports:
+      - $PORT_API:$PORT_API
+    build:
+      context: .
+      dockerfile: ./dockerfiles/node.Dockerfile
+      args:
+        - SCOPE=api
+
+  mongodb:
+    image: mongo
+    restart: unless-stopped
+    ports:
+      - $PORT_MONGODB:$PORT_MONGODB
+    volumes:
+      - mongodata:/data/db
+
+volumes:
+  mongodata:

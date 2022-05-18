@@ -23,7 +23,7 @@ interface Props {
    * the image shown when linking. should be large like 400?
    * default to icon but important to not forget this one
    */
-  image?: string;
+  imageUrl?: string;
   /**
    * label1, data1 describes an extra "info card" when sharing. used by slack for example
    */
@@ -39,13 +39,13 @@ interface Props {
 /**
  * meta tags for Search Engine Optimization (SEO) and page title
  */
-export function Head({
+export default function Head({
   title,
   description,
   domainUrl,
   url,
   keywords = "andyfx",
-  image = "/icons/icon-192x192.png",
+  imageUrl = "/icons/icon-192x192.png",
   twitter_label1 = "",
   twitter_data1 = "",
   twitter_label2 = "",
@@ -58,7 +58,6 @@ export function Head({
   const icon32 = `${domainUrl}/icons/icon-32x32.png`;
   const manifest = `${domainUrl}/manifest.json`;
 */
-  const imageUrl = `${image}`;
   const icon16 = `/icons/icon-16x16.png`;
   const icon32 = `/icons/icon-32x32.png`;
   const manifest = `/manifest.json`;

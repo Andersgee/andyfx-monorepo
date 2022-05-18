@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { BigCard } from "ui/molecules/BigCard";
-
+import BigCard from "ui/molecules/BigCard";
 import img_julia2wat from "public/projectImages/julia2wat.png";
 import img_weather from "public/projectImages/weather.jpg";
 import img_varavagar from "public/projectImages/varavagar.jpg";
@@ -12,7 +11,7 @@ interface Props {
   className?: string;
 }
 
-export function ProjectCards({ className }: Props) {
+export default function ProjectCards({ className }: Props) {
   return (
     <Container className={className}>
       <BigCard

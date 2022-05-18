@@ -3,7 +3,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "components/*": ["components/*"]
+      "components/*": ["components/*"],
+      "atoms/*": ["components/atoms/*"],
+      "molecules/*": ["components/molecules/*"],
+      "organisms/*": ["components/organisms/*"],
+      "templates/*": ["components/templates/*"]
     }
   },
   "include": ["next-env-custom.d.ts", "**/*.ts", "**/*.tsx", "/types"],

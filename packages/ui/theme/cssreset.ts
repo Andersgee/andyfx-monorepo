@@ -7,39 +7,20 @@ export const cssreset = css`
   /* Box sizing rules */
   html {
     height: 100%;
-    box-sizing: border-box;
   }
 
   *,
-  :after,
-  :before {
-    box-sizing: inherit;
+  ::after,
+  ::before {
+    box-sizing: border-box;
     margin: 0;
-  }
-
-  /* Remove default margin */
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  p,
-  figure,
-  blockquote,
-  dl,
-  dd {
-    margin: 0;
+    padding: 0;
   }
 
   /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
   ul[role="list"],
   ol[role="list"] {
     list-style: none;
-  }
-
-  ul,
-  ol {
-    padding: 0;
   }
 
   /* Set core root defaults */
@@ -73,6 +54,8 @@ export const cssreset = css`
 
   svg {
     shape-rendering: crispEdges;
+    text-rendering: geometricPrecision;
+    image-rendering: optimizeQuality;
     display: block;
   }
   svg circle,
@@ -80,8 +63,9 @@ export const cssreset = css`
   svg path,
   svg polygon,
   svg ellipse,
-  svg rect {
-    shape-rendering: geometricprecision;
+  svg rect,
+  svg text {
+    shape-rendering: geometricPrecision;
   }
 
   /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */

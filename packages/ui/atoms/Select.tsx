@@ -8,7 +8,7 @@ interface Props {
   className?: string;
 }
 
-export function Select({ value, onChange, children, className }: Props) {
+export default function Select({ value, onChange, children, className }: Props) {
   return (
     <Container className={className} value={value} onChange={onChange}>
       {children}

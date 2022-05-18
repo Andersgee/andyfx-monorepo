@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ImageCover } from "../atoms/ImageCover";
-import { Button } from "../atoms/Button";
-import { Link } from "../atoms/Link";
+import Button from "../atoms/Button";
+import Link from "../atoms/Link";
 
 interface Props {
   imgSrc: string;
@@ -12,13 +12,6 @@ interface Props {
   className?: string;
 }
 
-/**
- * lets get mui as reference
- * 1. image (aspect ratio 2.5)
- * 2. title
- * 3. text
- * 4. action1 action2
- */
 export function Card({ imgSrc, imgAlt, href, title, description, className }: Props) {
   return (
     <Container className={className}>

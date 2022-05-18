@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ImageCover, StaticImageData } from "../atoms/ImageCover";
-import { Link } from "../atoms/Link";
+import { ImageCover } from "ui/atoms";
+import Link from "../atoms/Link";
 
 interface Props {
   imgSrc: string | StaticImageData;
@@ -13,7 +13,7 @@ interface Props {
   buttonbackground?: string;
 }
 
-export function BigCard({
+export default function BigCard({
   flip = false,
   imgSrc,
   imgAlt,
@@ -99,4 +99,18 @@ const ActionButton = styled.a<ActionButtonProps>`
   font-weight: ${(props) => props.theme.font.weight.bold};
   transition: background-color ${(props) => props.theme.transition.fast};
   color: #fff;
+
+  &:link {
+    //unvisited
+    color: #fff;
+  }
+  &:visited {
+    color: #fff;
+  }
+  &:hover {
+    color: #fff;
+  }
+  &:active {
+    color: #fff;
+  }
 `;

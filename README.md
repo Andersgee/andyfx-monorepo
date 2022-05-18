@@ -1,26 +1,22 @@
 # andyfx-monorepo
 
-testing turborepo
+## dev
 
-```bash
+```sh
 yarn install
 yarn dev
 ```
 
-### build
+## prod
 
-```
+```sh
 yarn build
+yarn start
 ```
 
-### build (individual containers)
+## prod containers
 
-```bash
-sudo docker build --build-arg APP_SCOPE=portfolio --tag andersgee/portfolio:latest .
-sudo docker build --build-arg APP_SCOPE=svgbattle --tag andersgee/svgbattle:latest .
-sudo docker build --build-arg APP_SCOPE=api2 --tag andersgee/api2:latest --file Dockerfile_no_build .
-
-sudo docker push andersgee/portfolio
-sudo docker push andersgee/svgbattle
-sudo docker push andersgee/api2
+```sh
+sudo docker-compose build
+sudo docker-compose up
 ```

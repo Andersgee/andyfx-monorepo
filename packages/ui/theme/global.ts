@@ -38,9 +38,17 @@ export const GlobalStyle = createGlobalStyle`
    line-height: 1;
  }
 
- code {
-   font-family: ${(props) => props.theme.font.family.code};
- }
+ pre code {
+  font-family: ${(props) => props.theme.font.family.code};
+  display: block;
+  background: none;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  max-width: 100%;
+  min-width: 100px;
+  padding: 0;
+}
 
  button {
    background-color: inherit;
@@ -48,7 +56,6 @@ export const GlobalStyle = createGlobalStyle`
    letter-spacing: 0.09375em;
    font-weight: ${(props) => props.theme.font.weight.medium};
    font-size: ${(props) => props.theme.font.size.medium};
-   //padding: 0.25em 0.375em;
    outline: none;
    border: 0;
    cursor: pointer;
@@ -71,62 +78,66 @@ export const GlobalStyle = createGlobalStyle`
    line-height: 1.5;
    font-weight: ${(props) => props.theme.font.weight.regular};
    font-size: ${(props) => props.theme.font.size.medium};
-
-   
    color: ${(props) => props.theme.color.text.secondary};
-   
+
    a {
-     color: ${(props) => props.theme.color.accent};
-     text-decoration: none;
-     
+     outline-offset: 0px; //dont -1 offset if inside paragraph
+   }
+ }
+ 
+ 
+ a {
+    color: ${(props) => props.theme.color.text.primary};
+    text-decoration: underline dotted;
+     //text-decoration: none;
      &:link {
        //unvisited
-       color: ${(props) => props.theme.color.accent};
+       color: ${(props) => props.theme.color.text.primary};
      }
      &:visited {
-       color: ${(props) => props.theme.color.accent};
+      color: ${(props) => props.theme.color.text.primary};
      }
      &:hover {
-       color: ${(props) => props.theme.color.accent};
+       color: ${(props) => props.theme.color.text.primary};
        text-decoration: underline;
-     }
+      }
      &:active {
-       color: ${(props) => props.theme.color.accent};
+      color: ${(props) => props.theme.color.text.primary};
      }
-     
-   }
- }
-
- a {
-   text-decoration: none;
-   color: inherit;
-   white-space: nowrap;
-   //transition: all ${(props) => props.theme.transition.fast};
-
-   &:hover {
-     text-decoration: underline dotted;
-     opacity: 0.8;
-     //color: ${(props) => props.theme.color.accent};
    }
 
-   &:focus-visible {
-     outline: 2px solid ${(props) => props.theme.color.accent}; 
-   }
- }
 
+  button, a {
+    outline:none; 
+    outline-offset: -1px;
 
- button {
-   &:focus-visible {
-     box-shadow: 
-     0 0 0 2px ${(props) => props.theme.color.background},
-     0 0 0 4px ${(props) => props.theme.color.accent}; 
-   }
- }  
+    &:focus-visible {
+      outline: 1px solid ${(props) => props.theme.color.accent};
+      
+    }
+
+    svg:hover circle,
+    svg:hover line,
+    svg:hover path,
+    svg:hover polygon,
+    //svg:hover text
+    svg:hover ellipse,
+    svg:hover rect {
+      fill: ${(props) => props.theme.color.icon.hover};
+      stroke: ${(props) => props.theme.color.icon.hover};
+    }
+  }
 
  ::selection {
-   background-color: ${(props) => props.theme.color.primary};
-   //color: #f00; //var(--geist-foreground)
+   background-color: ${(props) => props.theme.color.accent};
  }
+
+ //essentially <input> elements
+ //:focus-visible {}
+
+ //the others such as buttons
+ //:focus:not(:focus-visible) {}
+
 
  /*
  @media print {

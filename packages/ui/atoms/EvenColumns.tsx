@@ -6,9 +6,9 @@ interface Props {
 }
 
 /**
- * Flex container with all children same width.
+ * Flex container with all direct childs same width.
  */
-export function EvenColumns({ children, className }: Props) {
+export default function EvenColumns({ children, className }: Props) {
   return <Container className={className}>{children}</Container>;
 }
 

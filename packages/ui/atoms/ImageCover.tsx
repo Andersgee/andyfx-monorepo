@@ -1,12 +1,13 @@
 import NextImage from "next/image";
 import styled from "styled-components";
-
+/*
 export interface StaticImageData {
   src: string;
   height: number;
   width: number;
   blurDataURL?: string;
 }
+*/
 
 interface Props {
   src: string | StaticImageData;
@@ -25,7 +26,7 @@ interface Props {
  *
  * default position="center center"
  */
-export function ImageCover({
+export default function ImageCover({
   src,
   alt,
   width,

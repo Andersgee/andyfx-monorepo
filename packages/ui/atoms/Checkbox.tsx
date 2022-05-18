@@ -8,7 +8,7 @@ interface Props {
   className?: string;
 }
 
-export function Checkbox({ label, checked, onChange, className }: Props) {
+export default function Checkbox({ label, checked, onChange, className }: Props) {
   return (
     <Container className={className}>
       <label>

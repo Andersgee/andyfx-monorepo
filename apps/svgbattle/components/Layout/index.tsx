@@ -1,17 +1,21 @@
 import styled from "styled-components";
-import { Signature } from "ui/molecules/Signature";
-import { Navbar } from "ui/molecules/Navbar";
-import { AndyfxSvg } from "ui/molecules/AndyfxSvg";
+import Signature from "ui/molecules/Signature";
+import AndyfxSvg from "ui/molecules/AndyfxSvg";
+import Navbar from "ui/molecules/Navbar";
+import ToggleThemeButton from "ui/molecules/ToggleThemeButton";
 
 interface Props {
   className?: string;
   children: React.ReactNode;
 }
 
-export function Layout({ className, children }: Props) {
+export default function Layout({ className, children }: Props) {
+  console.log("process.env.NEXT_PUBLIC_FIL:", process.env.NEXT_PUBLIC_FIL);
   return (
     <Container className={className}>
-      <Nav links={[]} />
+      <Nav>
+        <ToggleThemeButton />
+      </Nav>
       <Header>
         <Logo aria-label="Andyfx Logo" />
         <Title>Andyfx</Title>

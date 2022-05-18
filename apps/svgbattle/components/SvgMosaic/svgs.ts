@@ -18,7 +18,6 @@ import FidgetSpinner from "public/svgbattle/17.svg";
 import Matrix from "public/svgbattle/18.svg";
 import Cube from "public/svgbattle/19.svg";
 import Ticket from "public/svgbattle/20.svg";
-
 import SitepointLogo from "public/svgbattle/21.svg";
 import Cloud from "public/svgbattle/22.svg";
 import Boxception from "public/svgbattle/23.svg";

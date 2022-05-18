@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 
-const OfflinePage: NextPage = () => {
+const Page: NextPage = () => {
   return <h1>Your are offline</h1>;
 };
 
-export default OfflinePage;
+export default Page;
