@@ -1,4 +1,4 @@
-import { useState, createContext, useEffect } from "react";
+import { useState, createContext, useEffect, useContext } from "react";
 import { ThemeProvider as Provider } from "styled-components";
 import { GlobalStyle } from "./global";
 import { light, dark } from "./theme";
@@ -33,12 +33,14 @@ interface ProviderProps {
  * (styled-components also has a normal context provider but it only has theme, nothing else)
  */
 export function ThemeProvider({ children }: ProviderProps) {
-  const { isDarkMode, toggle: toggleTheme } = useDarkMode();
-  const [theme, setTheme] = useState(defaultValue.theme);
+  const { isDarkMode: clientIsUsingDarkMode, toggle: toggleTheme } = useDarkMode();
+  const [theme, setTheme] = useState(light);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    setTheme(isDarkMode ? dark : light);
-  }, [isDarkMode]);
+    setTheme(clientIsUsingDarkMode ? dark : light);
+    setIsDarkMode(clientIsUsingDarkMode);
+  }, [clientIsUsingDarkMode]);
 
   return (
     <Provider theme={theme}>
@@ -47,3 +49,5 @@ export function ThemeProvider({ children }: ProviderProps) {
     </Provider>
   );
 }
+
+export const useThemeContext = () => useContext(ThemeContext);
