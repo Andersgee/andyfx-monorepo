@@ -30,7 +30,6 @@ interface ContainerProps {
 }
 
 const Container = styled.div<ContainerProps>`
-  position: relative;
   grid-column: ${(props) => props.x} / span ${(props) => props.w};
   grid-row: ${(props) => props.y} / span ${(props) => props.h};
 `;

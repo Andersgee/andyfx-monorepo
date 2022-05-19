@@ -1,6 +1,7 @@
 const withPlugins = require("next-compose-plugins");
 const withTM = require("next-transpile-modules")(["ui"]);
-const svgrconfig = require("./svgrconfig.js");
+const svgrconfig = require("configs/webpack-svgr");
+const assetsourceconfig = require("configs/webpack-assetsource");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -12,15 +13,8 @@ const nextConfig = {
     styledComponents: true,
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // Important: return the modified config
     config.module.rules.push(svgrconfig);
-
-    //see: https://webpack.js.org/guides/asset-modules/
-    config.module.rules.push({
-      test: /\.glsl|txt/,
-      type: "asset/source",
-    });
-
+    config.module.rules.push(assetsourceconfig);
     return config;
   },
 };

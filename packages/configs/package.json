@@ -1,0 +1,12 @@
+{
+  "name": "configs",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.js",
+  "files": [
+    "tsconfig-nextjs.json",
+    "tsconfig-node.json",
+    "webpack-svgr.js",
+    "webpack-assetsource.js"
+  ]
+}

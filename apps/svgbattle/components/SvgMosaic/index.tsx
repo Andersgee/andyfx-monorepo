@@ -6,29 +6,39 @@ interface Props {
   className?: string;
 }
 
-export default function SvgMosaic({ className }: Props) {
-  const large = [4, 5, 11, 24, 37, 47, 61, 75, 86, 93];
-  const wide = [0];
-  const contrastText = [12, 14, 18, 22, 23, 29, 32, 54, 73, 88, 95];
+const BASEWIDTH = 200;
+const BASEHEIGHT = 150;
+const LARGE = [4, 5, 11, 24, 37, 47, 61, 75, 86, 93];
+const CONTRASTTEXT = [12, 14, 18, 22, 23, 29, 32, 54, 73, 88, 95];
 
+export default function SvgMosaic({ className }: Props) {
   return (
     <Container className={className}>
       {svgs.map(({ name, Svg }, i) => {
-        const width = large.includes(i + 1) || wide.includes(i + 1) ? 2 : 1;
-        const height = large.includes(i + 1) ? 2 : 1;
-        //const width = 2;
-        //const height = 2;
-        const contrast = contrastText.includes(i + 1);
+        const width = LARGE.includes(i + 1) ? 2 : 1;
+        const height = LARGE.includes(i + 1) ? 2 : 1;
+        const contrast = CONTRASTTEXT.includes(i + 1);
         return (
           <Item key={i} width={width} height={height}>
             <Label contrast={contrast}>{`#${i + 1} - ${name}`}</Label>
-            <Svg width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-label={name} role="img" />
+            <Svg
+              width={`${BASEWIDTH * width + (width - 1) * 16}px`}
+              height={`${BASEHEIGHT * height + (height - 1) * 16}px`}
+              preserveAspectRatio="xMidYMid slice"
+              aria-label={name}
+              role="img"
+            />
           </Item>
         );
       })}
     </Container>
   );
 }
+
+const Item = styled(GridItem)`
+  position: relative;
+  box-shadow: ${(props) => props.theme.shadow[5]};
+`;
 
 interface LabelProps {
   readonly contrast?: boolean;
@@ -47,24 +57,27 @@ const Label = styled.h3<LabelProps>`
 const Container = styled.div`
   display: grid;
   justify-content: center;
-  gap: 1rem;
+  gap: 16px;
   width: 100%;
   max-width: 1200px;
 
-  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
+  grid-template-columns: repeat(2, auto);
   grid-auto-flow: dense;
 
-  @media ${(props) => props.theme.media.md} {
-    grid-template-columns: repeat(3, 1fr);
+  @media only screen and (min-width: calc(200px*3 + 16px*4)) {
+    grid-template-columns: repeat(3, auto);
   }
 
-  @media ${(props) => props.theme.media.lg} {
-    grid-template-columns: repeat(5, 1fr);
+  @media only screen and (min-width: calc(200px*4 + 16px*5)) {
+    grid-template-columns: repeat(4, auto);
   }
-`;
 
-const Item = styled(GridItem)`
-  background-color: ${(props) => props.theme.color.background};
-  box-shadow: ${(props) => props.theme.shadow[5]};
+  @media only screen and (min-width: calc(200px*5 + 16px*6)) {
+    grid-template-columns: repeat(5, auto);
+  }
+
+  /*
+  
+  */
 `;

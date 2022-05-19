@@ -1,5 +1,7 @@
 const withPlugins = require("next-compose-plugins");
 const withTM = require("next-transpile-modules")(["ui"]);
+const svgrconfig = require("configs/webpack-svgr");
+const assetsourceconfig = require("configs/webpack-assetsource");
 
 //const path = require("path");
 //const isDev = process.env.NODE_ENV !== "production";
@@ -14,38 +16,8 @@ const nextConfig = {
     styledComponents: true,
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // Important: return the modified config
-    config.module.rules.push({
-      test: /\.svg$/i,
-      issuer: { and: [/\.(js|ts|md)x?$/] },
-      use: [
-        {
-          loader: "@svgr/webpack",
-          options: {
-            prettier: false,
-            svgo: true,
-            svgoConfig: {
-              plugins: [
-                {
-                  name: "preset-default",
-                  params: {
-                    overrides: { removeViewBox: false, cleanupIDs: false, prefixIds: false },
-                  },
-                },
-              ],
-            },
-            titleProp: true,
-          },
-        },
-      ],
-    });
-
-    //see: https://webpack.js.org/guides/asset-modules/
-    config.module.rules.push({
-      test: /\.glsl|txt/,
-      type: "asset/source",
-    });
-
+    config.module.rules.push(svgrconfig);
+    config.module.rules.push(assetsourceconfig);
     return config;
   },
 };

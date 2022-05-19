@@ -10,7 +10,6 @@ interface Props {
 }
 
 export default function Layout({ className, children }: Props) {
-  console.log("process.env.NEXT_PUBLIC_FIL:", process.env.NEXT_PUBLIC_FIL);
   return (
     <Container className={className}>
       <Nav>

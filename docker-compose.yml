@@ -1,50 +1,50 @@
 version: "3.8"
 
 services:
-  portfolio:
-    image: andersgee/portfolio
-    restart: unless-stopped
-    ports:
-      - $PORT_PORTFOLIO:$PORT_PORTFOLIO
-    build:
-      context: .
-      dockerfile: ./dockerfiles/nextjs.Dockerfile
-      args:
-        - SCOPE=portfolio
-
-  svgbattle:
-    image: andersgee/svgbattle
-    restart: unless-stopped
-    ports:
-      - $PORT_SVGBATTLE:$PORT_SVGBATTLE
-    build:
-      context: .
-      dockerfile: ./dockerfiles/nextjs.Dockerfile
-      args:
-        - SCOPE=svgbattle
-
-  sideprojects:
-    image: andersgee/sideprojects
-    restart: unless-stopped
-    ports:
-      - $PORT_SIDEPROJECTS:$PORT_SIDEPROJECTS
-    build:
-      context: .
-      dockerfile: ./dockerfiles/nextjs.Dockerfile
-      args:
-        - SCOPE=sideprojects
-
-  api:
-    image: andersgee/api
-    restart: unless-stopped
-    ports:
-      - $PORT_API:$PORT_API
-    build:
-      context: .
-      dockerfile: ./dockerfiles/node.Dockerfile
-      args:
-        - SCOPE=api
-
+  #portfolio:
+  #  image: andersgee/portfolio
+  #  restart: unless-stopped
+  #  ports:
+  #    - $PORT_PORTFOLIO:$PORT_PORTFOLIO
+  #  build:
+  #    context: .
+  #    dockerfile: ./dockerfiles/nextjs.Dockerfile
+  #    args:
+  #      - SCOPE=portfolio
+  #
+  #svgbattle:
+  #  image: andersgee/svgbattle
+  #  restart: unless-stopped
+  #  ports:
+  #    - $PORT_SVGBATTLE:$PORT_SVGBATTLE
+  #  build:
+  #    context: .
+  #    dockerfile: ./dockerfiles/nextjs.Dockerfile
+  #    args:
+  #      - SCOPE=svgbattle
+  #
+  #sideprojects:
+  #  image: andersgee/sideprojects
+  #  restart: unless-stopped
+  #  ports:
+  #    - $PORT_SIDEPROJECTS:$PORT_SIDEPROJECTS
+  #  build:
+  #    context: .
+  #    dockerfile: ./dockerfiles/nextjs.Dockerfile
+  #    args:
+  #      - SCOPE=sideprojects
+  #
+  #api:
+  #  image: andersgee/api
+  #  restart: unless-stopped
+  #  ports:
+  #    - $PORT_API:$PORT_API
+  #  build:
+  #    context: .
+  #    dockerfile: ./dockerfiles/node.Dockerfile
+  #    args:
+  #      - SCOPE=api
+  #
   mongodb:
     image: mongo
     restart: unless-stopped
