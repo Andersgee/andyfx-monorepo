@@ -1,0 +1,40 @@
+<svg viewBox="0 0 400 300">
+<rect fill="#000000" x="0" y="0" width="100%" height="100%"/> 
+
+
+
+<rect width="240" height="120" 
+x="80" y="90" rx="20"
+fill="#37385A"
+/>
+
+<rect width="200" height="80" 
+x="100" y="110" rx="10"
+fill="#9897AE"
+/>
+
+<rect width="50" height="80" 
+x="215" y="110"
+fill="#C0C3DB"
+transform="skewX(-15)"
+/>
+
+<circle cx="120" cy="130" fill="#000" r="5"/>
+<circle cx="120" cy="150" fill="#000" r="5"/>
+<circle cx="120" cy="170" fill="#000" r="5"/>
+
+<circle cx="280" cy="130" fill="#000" r="5"/>
+<circle cx="280" cy="150" fill="#000" r="5"/>
+<circle cx="280" cy="170" fill="#000" r="5"/>
+
+
+<path fill="non" stroke="#000" stroke-width="10" stroke-linecap="round"
+d="M 170 130 l 0 40" />
+<path fill="non" stroke="#000" stroke-width="10" stroke-linecap="round"
+d="M 190 130 l 0 40" />
+<path fill="non" stroke="#000" stroke-width="10" stroke-linecap="round"
+d="M 210 130 l 0 40" />
+<path fill="non" stroke="#000" stroke-width="10" stroke-linecap="round"
+d="M 230 130 l 0 40" />
+
+</svg>

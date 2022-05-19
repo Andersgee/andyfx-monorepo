@@ -1,0 +1,59 @@
+<svg viewBox="0 0 400 300">
+<rect fill="#BAC7CE" x="0" y="0" width="100%" height="100%"/> 
+
+<rect width="140" height="140" fill="#475862"
+x="130" y="-70"
+transform="rotate(45, 200, 0)"
+/>
+
+<path fill="#000"
+transform="rotate(15, 315, 200)"
+d="M 315 200
+m -60 60
+l 0 -60
+a 60 60 0 0 1 60 -60
+l 60 0
+l 0 60
+a 60 60 0 0 1 -60 60
+z
+"
+/>
+
+<path fill="#000"
+transform="rotate(75, 85, 200)"
+d="M 85 200
+m -60 60
+l 0 -60
+a 60 60 0 0 1 60 -60
+l 60 0
+l 0 60
+a 60 60 0 0 1 -60 60
+z
+"
+/>
+
+<circle fill="#868A64" cx="85" cy="200" r="50"/>
+<circle fill="#868A64" cx="315" cy="200" r="50"/>
+
+<circle fill="#000" cx="85" cy="200" r="20"/>
+<circle fill="#000" cx="315" cy="200" r="20"/>
+
+<circle fill="#4E2B24" cx="85" cy="200" r="15"/>
+<circle fill="#4E2B24" cx="315" cy="200" r="15"/>
+
+
+<path fill="#5A6042"
+d="M 85 200
+m -50 0
+a 50 50 0 0 1 100 0
+a 53 53 0 0 0 -100 0
+" />
+
+<path fill="#5A6042"
+d="M 315 200
+m -50 0
+a 50 50 0 0 1 100 0
+a 53 53 0 0 0 -100 0
+" />
+
+</svg>

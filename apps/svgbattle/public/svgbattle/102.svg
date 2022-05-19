@@ -1,0 +1,32 @@
+<svg viewBox="0 0 400 300">
+<rect fill="#000" x="0" y="0" width="100%" height="100%"/> 
+
+<rect fill="#fff" x="120" y="95"
+stroke="#000" stroke-width="10"
+width="160" height="110" rx="55" />
+
+<g id="svg_onepiece_bone" transform="translate(200,150)" fill="#fff">
+  <circle r="12" cx="0" cy="-10"/>
+  <circle r="12" cx="0" cy="10"/>
+  <rect x="-26" y="-10" width="30" height="20" />
+</g>
+
+<use href="#svg_onepiece_bone" 
+x="105" y="-20" transform="rotate(45,200,150)"/>
+<use href="#svg_onepiece_bone" 
+x="105" y="20" transform="rotate(135,200,150)"/>
+<use href="#svg_onepiece_bone" 
+x="105" y="-20" transform="rotate(-135,200,150)"/>
+<use href="#svg_onepiece_bone" 
+x="105" y="20" transform="rotate(-45,200,150)"/>
+
+<ellipse rx="20" ry="25" cx="170" cy="150" fill="#000"
+transform="rotate(60, 170, 150)"/>
+<ellipse rx="20" ry="25" cx="230" cy="150" fill="#000"
+transform="rotate(-60, 230, 150)"/>
+
+<rect x="193" y="210" width="14" height="20" fill="#fff"/>
+<rect x="174" y="210" width="14" height="20" fill="#fff"/>
+<rect x="212" y="210" width="14" height="20" fill="#fff"/>
+
+</svg>

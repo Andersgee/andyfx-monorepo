@@ -103,6 +103,15 @@ import Candle from "public/svgbattle/98.svg";
 import GiftBox from "public/svgbattle/99.svg";
 import CSSBattle from "public/svgbattle/100.svg";
 
+import Sharingan from "public/svgbattle/101.svg";
+import OnePiece from "public/svgbattle/102.svg";
+import SuperSayian from "public/svgbattle/103.svg";
+import Amegakure from "public/svgbattle/104.svg";
+import Ryuk from "public/svgbattle/105.svg";
+import RyuksApple from "public/svgbattle/106.svg";
+import SealingWand from "public/svgbattle/107.svg";
+import ClowCard from "public/svgbattle/108.svg";
+
 const svgs = [
   { name: "Simply Square", Svg: SimplySquare },
   { name: "Carrom", Svg: Carrom },
@@ -212,6 +221,15 @@ const svgs = [
   { name: "Candle", Svg: Candle },
   { name: "Gift Box", Svg: GiftBox },
   { name: "CSSBattle", Svg: CSSBattle },
+
+  { name: "Sharingan", Svg: Sharingan },
+  { name: "One Piece", Svg: OnePiece },
+  { name: "Super Sayian", Svg: SuperSayian },
+  { name: "Amegakure", Svg: Amegakure },
+  { name: "Ryuk", Svg: Ryuk },
+  { name: "Ryuk's Apple", Svg: RyuksApple },
+  { name: "Sealing Wand", Svg: SealingWand },
+  { name: "Clow Card", Svg: ClowCard },
 ];
 
 export default svgs;

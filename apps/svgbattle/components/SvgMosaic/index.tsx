@@ -8,8 +8,8 @@ interface Props {
 
 const BASEWIDTH = 200;
 const BASEHEIGHT = 150;
-const LARGE = [4, 5, 11, 24, 37, 47, 61, 75, 86, 93];
-const CONTRASTTEXT = [12, 14, 18, 22, 23, 29, 32, 54, 73, 88, 95];
+const LARGE = [4, 5, 11, 24, 37, 47, 61, 75, 86, 93, 103];
+const CONTRASTTEXT = [12, 14, 18, 22, 23, 29, 32, 54, 73, 88, 95, 105];
 
 export default function SvgMosaic({ className }: Props) {
   return (
