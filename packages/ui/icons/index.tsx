@@ -1,3 +1,5 @@
+export { default as AndyfxIcon } from "./Andyfx";
+export { default as AndyfxAnimatedIcon } from "./AndyfxAnimated";
 export { default as MenuIcon } from "./Menu";
 export { default as PersonIcon } from "./Person";
 export { default as VisibilityIcon } from "./Visibility";

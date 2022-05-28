@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Signature from "ui/molecules/Signature";
-import AndyfxSvg from "ui/molecules/AndyfxSvg";
+import { AndyfxIcon } from "ui/icons";
 import Navbar from "ui/molecules/Navbar";
 import { useContext } from "react";
 import { UserContext } from "contexts/User";
@@ -57,9 +57,9 @@ const Container = styled.div`
     / auto;
 `;
 
-const Logo = styled(AndyfxSvg)`
-  width: 7.2rem;
-  height: 6rem;
+const Logo = styled(AndyfxIcon)`
+  width: 120px;
+  height: 100px;
 `;
 
 const Header = styled.header`

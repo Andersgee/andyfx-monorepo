@@ -17,6 +17,10 @@ const nextConfig = {
     config.module.rules.push(assetsourceconfig);
     return config;
   },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
 };
 
 module.exports = withPlugins([withTM], nextConfig);
