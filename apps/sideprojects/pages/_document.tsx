@@ -33,8 +33,9 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          {/* eslint-disable-next-line @next/next/google-font-display*/}
           <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=block"
             rel="stylesheet"
           />
         </Head>
