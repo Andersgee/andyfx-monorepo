@@ -12,7 +12,7 @@ type Props = {
 };
 
 export default function EditProfile({ className }: Props) {
-  const { user, userId, logout, mutateUser } = useUserContext();
+  const { user, logout, getMyUser } = useUserContext();
   const [name, setName] = useState("");
 
   if (!user) {
@@ -23,9 +23,18 @@ export default function EditProfile({ className }: Props) {
     api
       .update(`/user`, { name })
       .then(() => {
-        mutateUser();
+        getMyUser();
       })
       .catch((err) => console.log(err));
+
+  const handleRemove = () => {
+    api
+      .remove(`/user`)
+      .then(() => {
+        logout();
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <Container className={className}>
@@ -37,12 +46,14 @@ export default function EditProfile({ className }: Props) {
       <Text name="name" label="name" value={name} onChange={(e) => setName(e.target.value)} />
       <Button onClick={handleClick}>change name</Button>
 
+      <Button onClick={handleRemove}>REMOVE ME</Button>
+
       <Divider />
       <div>email</div>
       <div>{user.email}</div>
       <Divider />
       <div>your public profile</div>
-      <Link href={`/profile/${userId}`}>{user.name} page</Link>
+      <Link href={`/profile/${user._id}`}>{user.name} page</Link>
       <div>
         <Tooltip label="Click here to do stuff">
           <Button onClick={logout}>sign out</Button>

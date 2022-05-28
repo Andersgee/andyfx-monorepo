@@ -2,7 +2,7 @@ import { useState, useRef, ReactNode } from "react";
 import styled from "styled-components";
 import DefaultLink from "../atoms/Link";
 import { useOnClickOutside } from "usehooks-ts";
-import MenuIcon from "ui/icons/Menu";
+import { MenuIcon } from "ui/icons";
 import { Tooltip } from "ui/atoms";
 
 interface Props {

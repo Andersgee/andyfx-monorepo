@@ -5,8 +5,9 @@ import { mongooseConnection } from "./mongodb";
 import consoleLogRequest from "#middleware/consoleLogRequest";
 import auth from "#routes/auth";
 import token from "#routes/token";
-import authUser from "#middleware/authUser";
 import user from "#routes/user";
+import post from "#routes/post";
+import reply from "#routes/reply";
 import reddit from "#routes/reddit";
 import openweathermap from "#routes/openweathermap";
 
@@ -21,10 +22,10 @@ app.use(consoleLogRequest);
 app.use("/auth", auth);
 app.use("/token", token);
 
-app.use(authUser);
-//everything below here requires either valid Bearer accessToken or valid cookie
-
 app.use("/user", user);
+app.use("/post", post);
+app.use("/reply", reply);
+
 app.use("/reddit", reddit);
 app.use("/openweathermap", openweathermap);
 

@@ -1,11 +1,12 @@
 import type { NextPage } from "next";
 import { Head } from "ui/atoms";
 import Layout from "templates/Layout";
+import { TokenProvider } from "contexts/Token";
 import EditProfile from "components/organisms/EditProfile";
 
 const Page: NextPage = () => {
   return (
-    <>
+    <TokenProvider>
       <Head
         title="profile"
         description="Your profile."
@@ -15,7 +16,7 @@ const Page: NextPage = () => {
       <Layout defaultHeader={false}>
         <EditProfile />
       </Layout>
-    </>
+    </TokenProvider>
   );
 };
 

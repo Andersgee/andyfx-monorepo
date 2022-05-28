@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { GridItem } from "ui/atoms/";
 import svgs from "./svgs";
+import { Section } from "ui/atoms";
 
 interface Props {
   className?: string;
@@ -11,23 +12,40 @@ const BASEHEIGHT = 150;
 const LARGE = [4, 5, 11, 24, 37, 47, 61, 75, 86, 93, 103];
 const CONTRASTTEXT = [12, 14, 18, 22, 23, 29, 32, 54, 73, 88, 95, 105];
 
+const CLICKABLE = [24, 36, 37, 39, 40, 41, 50, 53, 54, 55, 75];
+
 export default function SvgMosaic({ className }: Props) {
   return (
-    <Container className={className}>
+    <Container className={className} title="svg images">
       {svgs.map(({ name, Svg }, i) => {
         const width = LARGE.includes(i + 1) ? 2 : 1;
         const height = LARGE.includes(i + 1) ? 2 : 1;
         const contrast = CONTRASTTEXT.includes(i + 1);
+        const isClickable = CLICKABLE.includes(i + 1);
         return (
           <Item key={i} width={width} height={height}>
             <Label contrast={contrast}>{`#${i + 1} - ${name}`}</Label>
-            <Svg
-              width={`${BASEWIDTH * width + (width - 1) * 16}px`}
-              height={`${BASEHEIGHT * height + (height - 1) * 16}px`}
-              preserveAspectRatio="xMidYMid slice"
-              aria-label={name}
-              role="img"
-            />
+            {isClickable ? (
+              <Svg
+                role="button"
+                tabIndex={0}
+                onClick={() => {}}
+                width={`${BASEWIDTH * width + (width - 1) * 16}px`}
+                height={`${BASEHEIGHT * height + (height - 1) * 16}px`}
+                preserveAspectRatio="xMidYMid slice"
+                aria-hidden={false}
+                aria-label={name}
+              />
+            ) : (
+              <Svg
+                role="img"
+                width={`${BASEWIDTH * width + (width - 1) * 16}px`}
+                height={`${BASEHEIGHT * height + (height - 1) * 16}px`}
+                preserveAspectRatio="xMidYMid slice"
+                aria-hidden={false}
+                aria-label={name}
+              />
+            )}
           </Item>
         );
       })}
@@ -48,13 +66,19 @@ const Label = styled.h3<LabelProps>`
   position: absolute;
   //color: ${(props) => props.theme.color.background};
   //text-shadow: ${(props) => props.theme.color.accent} 1px 0px 16px;
-  color: ${(props) => (props.contrast ? "#000" : "#fff")};
-  bottom: 0;
-  left: 0.5rem;
+
+  //color: ${(props) => (props.contrast ? "#000" : "#fff")};
+  //background-color: ${(props) => (props.contrast ? "#fff" : "#000")};
+  color: ${(props) => props.theme.color.text.secondary};
+  background-color: ${(props) => props.theme.color.background};
+
+  padding: 0 4px;
+  bottom: 0.125rem;
+  left: 0.25rem;
   font-size: ${(props) => props.theme.font.size.small};
 `;
 
-const Container = styled.div`
+const Container = styled(Section)`
   display: grid;
   justify-content: center;
   gap: 16px;

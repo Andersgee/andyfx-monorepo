@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import BigCard from "ui/molecules/BigCard";
+import img_svgbattle from "public/projectImages/svgbattle.png";
 import img_julia2wat from "public/projectImages/julia2wat.png";
 import img_weather from "public/projectImages/weather.jpg";
 import img_varavagar from "public/projectImages/varavagar.jpg";
@@ -15,12 +16,21 @@ export default function ProjectCards({ className }: Props) {
   return (
     <Container className={className}>
       <BigCard
+        flip
+        title="Svg Battle"
+        description="Css Battle but written in svg. Includes some svg animations."
+        imgSrc={img_svgbattle}
+        imgAlt="svg battle"
+        href="https://svgbattle.andyfx.se"
+        buttonbackground="linear-gradient(135deg, #14313E, #93830F)"
+      />
+      <BigCard
         title="julia2wat"
         description="Online version of WebAssemblyText.jl. Convert Julia to WebAssembly text."
         imgSrc={img_julia2wat}
         imgAlt="julia2wat"
         href="https://julia2wat.herokuapp.com"
-        buttonbackground="linear-gradient(135deg, #9457b0, #3f61d7)"
+        buttonbackground="linear-gradient(135deg, #8B58B4, #4760D3)"
       />
       <BigCard
         flip
@@ -29,7 +39,7 @@ export default function ProjectCards({ className }: Props) {
         imgSrc={img_weather}
         imgAlt="Weather"
         href="https://weather.andyfx.net"
-        buttonbackground="linear-gradient(135deg, #5d6c80, #7f94af);"
+        buttonbackground="linear-gradient(135deg, #556272, #767d8e);"
       />
       <BigCard
         title="Våra Vägar"
@@ -37,7 +47,7 @@ export default function ProjectCards({ className }: Props) {
         imgSrc={img_varavagar}
         imgAlt="Våra Vägar"
         href="https://www.varavagar.se"
-        buttonbackground="linear-gradient(135deg, #898f58, #c4c8a7)"
+        buttonbackground="linear-gradient(135deg, #585c3d, #828476)"
       />
       <BigCard
         flip
@@ -46,7 +56,7 @@ export default function ProjectCards({ className }: Props) {
         imgSrc={img_climatevisualizer}
         imgAlt="Climate Visualizer"
         href="https://www.climatevisualizer.com"
-        buttonbackground="linear-gradient(135deg, #dd574f, #ee8984)"
+        buttonbackground="linear-gradient(135deg, #c9413a, #4d4d4d)"
       />
       <BigCard
         title="Mozart AI"
@@ -54,7 +64,7 @@ export default function ProjectCards({ className }: Props) {
         imgSrc={img_wasmmozart}
         imgAlt="Mozart AI"
         href="https://andersgee.github.io/posts/wasmMozart/index.html"
-        buttonbackground="linear-gradient(135deg, #565d60, #9a9ea0)"
+        buttonbackground="linear-gradient(135deg, #545657, #545657)"
       />
       <BigCard
         flip
@@ -63,7 +73,7 @@ export default function ProjectCards({ className }: Props) {
         imgSrc={img_wasmshakespeare}
         imgAlt="Shakespeare AI"
         href="https://andersgee.github.io/posts/wasmShakespeare/index.html"
-        buttonbackground="linear-gradient(135deg, #a68d6e, #d3bfa6)"
+        buttonbackground="linear-gradient(135deg, #756552, #72685C)"
       />
     </Container>
   );

@@ -16,10 +16,6 @@ export function validate(values: Values, isSignup?: boolean) {
   }
 
   if (isSignup) {
-    if (values.password !== values.confirmPassword) {
-      errors.confirmPassword = "Must match";
-    }
-
     if (!values.name) {
       errors.name = "Required";
     } else if (values.name.length < 3) {
@@ -34,7 +30,7 @@ export async function onSubmit(
   values: Values,
   helpers: FormikHelpers<Values>,
   isSignup: boolean,
-  onSuccess?: (json: any) => void,
+  onSuccess?: (res: Response) => void,
   onFailure?: (error: any) => void
 ) {
   try {

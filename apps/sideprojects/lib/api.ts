@@ -6,7 +6,7 @@ const CREDENTIALS = process.env.NODE_ENV === "production" ? "same-origin" : "inc
  */
 function throw_if_not_ok(method: string, route: string, res: Response, json?: any) {
   if (!res.ok) {
-    throw new Error(`${method}(${route}) (${res.status}) ${res.statusText}. ${JSON.stringify(json)}`);
+    throw new Error(`api.${method}("${route}") (${res.status}) ${res.statusText}. ${JSON.stringify(json)}`);
   }
 }
 
@@ -77,9 +77,9 @@ async function post<T = any>(route: string, body: any) {
 async function update<T = any>(route: string, body: any) {
   const res = await update_res(route, body);
   const json: T = await res.json();
-  throw_if_not_ok("post", route, res, json);
+  throw_if_not_ok("update", route, res, json);
   return json;
 }
 
-const api = { get, remove, post, update, get_res, remove_res, post_res, update_res };
+const api = { request, get, remove, post, update, get_res, remove_res, post_res, update_res };
 export default api;

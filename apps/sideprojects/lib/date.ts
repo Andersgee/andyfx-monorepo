@@ -10,6 +10,12 @@ export function dateformat(date: Date) {
   return `${d} (${t.slice(0, 5)})`;
 }
 
+export function dateformatNumber(number: number) {
+  const date = new Date(number);
+  const [d, t] = localIsoString(date).split("T");
+  return `${d} (${t.slice(0, 5)})`;
+}
+
 /**
  * [year,month,day, hh,mm,ss]
  */

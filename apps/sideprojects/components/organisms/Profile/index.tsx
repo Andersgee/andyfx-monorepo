@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Divider } from "ui/atoms";
 import { useUser } from "hooks/useUser";
+import Wallposts from "molecules/Wallposts";
 
 type Props = {
   id: string;
@@ -16,10 +17,11 @@ export default function Profile({ id, className }: Props) {
 
   return (
     <Container className={className}>
-      <div>Profile/stats for {user.name} goes here</div>
+      <div>
+        Profile/stats for {user.name} ({user.email}) goes here
+      </div>
       <Divider />
-      <div>email</div>
-      <div>{user.email}</div>
+      <Wallposts userId={id} />
     </Container>
   );
 }

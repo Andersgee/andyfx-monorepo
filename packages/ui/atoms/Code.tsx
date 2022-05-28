@@ -2,6 +2,85 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import Prism from "prismjs";
 import ClipboardCopyButton from "./ClipboardCopyButton";
+/*
+import components from "prismjs/components";
+const languages: string[] = [];
+for (const lang in components.languages) {
+  if (lang === "meta") {
+    continue;
+  }
+  languages.push(lang);
+  const alias = components.languages[lang].alias;
+  if (alias) {
+    if (typeof alias === "string") {
+      languages.push(alias);
+    } else if (Array.isArray(alias)) {
+      for (const a of alias) {
+        if (typeof a === "string") {
+          languages.push(a);
+        }
+      }
+    }
+  }
+}
+export { languages };
+*/
+//export const languages = Object.keys(components.languages).filter((l) => l !== "meta");
+
+export const languages = [
+  "javascript",
+  "js", //alias
+  "typescript",
+  "ts", //alias
+  "css",
+  "jsx",
+  "tsx",
+  "bash",
+  "shell", //alias
+  "markdown",
+  "md", //alias
+  "python",
+  "py", //alias
+  "markup",
+  "html", //alias
+  "xml", //alias
+  "svg", //alias
+  "glsl",
+  "wasm",
+  "julia",
+];
+import "prismjs/components/prism-markup";
+import "prismjs/components/prism-css";
+import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-tsx";
+import "prismjs/components/prism-clike";
+import "prismjs/components/prism-c";
+import "prismjs/components/prism-glsl";
+import "prismjs/components/prism-bash";
+import "prismjs/components/prism-markdown";
+import "prismjs/components/prism-python";
+import "prismjs/components/prism-wasm";
+import "prismjs/components/prism-julia";
+
+/*
+import "prismjs/components/prism-bash";
+import "prismjs/components/prism-css";
+import "prismjs/components/prism-csv";
+import "prismjs/components/prism-docker";
+import "prismjs/components/prism-git";
+import "prismjs/components/prism-json";
+import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-markdown";
+import "prismjs/components/prism-markup";
+import "prismjs/components/prism-mongodb";
+import "prismjs/components/prism-python";
+import "prismjs/components/prism-regex";
+import "prismjs/components/prism-sql";
+
+import "prismjs/components/prism-yaml";
+*/
 
 type Props = {
   code: string;
@@ -16,7 +95,7 @@ export default function Code({ className, code, language }: Props) {
     if (ref.current) {
       Prism.highlightElement(ref.current);
     }
-  }, [ref]);
+  }, [ref, code, language]);
 
   return (
     <Pre className={className}>
@@ -60,11 +139,14 @@ const StyledCode = styled.code`
   font-family: ${(props) => props.theme.font.family.code};
   font-size: 1rem;
   text-align: left;
-  white-space: pre;
+  //white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
   line-height: 1.5;
+
+  white-space: pre-wrap;
+  //word-wrap: break-word;
 
   -moz-tab-size: 2;
   -o-tab-size: 2;

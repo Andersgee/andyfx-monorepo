@@ -17,9 +17,9 @@ router.use(
   })
 );
 
-router.delete("/", authUser, token.revokeRefreshToken);
-router.get("/generate", authUser, token.generateRefreshToken);
+router.get("/", token.generateAccessToken);
 
-router.post("/", token.generateAccessToken);
+router.get("/refresh", authUser, token.generateRefreshToken);
+router.delete("/refresh", authUser, token.revokeRefreshToken);
 
 export default router;

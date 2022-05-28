@@ -8,8 +8,8 @@ const HomePage: NextPage = () => {
   return (
     <>
       <Head
-        title="svgBattle"
-        description="Writing CSSBattle but in SVG."
+        title="Svg Battle"
+        description="Svg Battle. Writing Css Battle but in svg."
         domainUrl="https://svgbattle.andyfx.se"
         url="https://svgbattle.andyfx.se"
       />
@@ -17,7 +17,7 @@ const HomePage: NextPage = () => {
         <article>
           <Introduction>
             <div>
-              <h2>svgBattle</h2>
+              <h2>Svg Battle</h2>
               <p>
                 A fun way to learn svg; writing <a href="https://cssbattle.dev/">CSSBattle</a> by hand in svg.
               </p>

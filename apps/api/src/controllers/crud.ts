@@ -12,7 +12,7 @@ export async function create(Model: mongoose.Model<any>, req: Request, res: Resp
   try {
     const doc = new Model(req.body);
     await doc.save();
-    return res.status(201).json(doc);
+    return res.status(201).json("Created.");
   } catch (error) {
     return res.status(409).json({ message: "Something went wrong." });
   }
@@ -47,7 +47,7 @@ export async function update(Model: mongoose.Model<any>, req: Request, res: Resp
     const doc = await Model.findByIdAndUpdate(id, req.body, options);
     if (!doc) return res.status(404).json({ message: "Not found." });
 
-    return res.status(200).json(doc);
+    return res.status(200).json("Updated.");
   } catch (error) {
     return res.status(409).json({ message: "Something went wrong." });
   }

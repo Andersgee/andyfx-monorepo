@@ -1,6 +1,5 @@
 export { default as Article } from "./Article";
 export { default as Button } from "./Button";
-export { default as Checkbox } from "./Checkbox";
 export { default as Divider } from "./Divider";
 export { default as EvenColumns } from "./EvenColumns";
 export { default as GridItem } from "./GridItem";
@@ -15,3 +14,7 @@ export { default as Section } from "./Section";
 export { default as Select } from "./Select";
 export { default as Tooltip } from "./Tooltip";
 export { default as Code } from "./Code";
+export { default as Paper } from "./Paper";
+export { default as AutoComplete } from "./AutoComplete";
+export { default as ClipboardCopyButton } from "./ClipboardCopyButton";
+export { default as Textarea } from "./Textarea";

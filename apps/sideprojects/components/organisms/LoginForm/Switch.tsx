@@ -3,17 +3,17 @@ import styled from "styled-components";
 
 type Props = {
   isSignup: boolean;
-  setIsSignup: React.Dispatch<React.SetStateAction<boolean>>;
   className?: string;
+  setSignupQuery: (bool: boolean) => void;
 };
 
-export default function Switch({ isSignup, setIsSignup, className }: Props) {
+export default function Switch({ isSignup, className, setSignupQuery }: Props) {
   return (
     <Container className={className}>
-      <Button active={!isSignup} type="button" onClick={() => setIsSignup(false)}>
+      <Button active={!isSignup} type="button" onClick={() => setSignupQuery(false)}>
         Sign in
       </Button>
-      <Button active={isSignup} type="button" onClick={() => setIsSignup(true)}>
+      <Button active={isSignup} type="button" onClick={() => setSignupQuery(true)}>
         Sign up
       </Button>
     </Container>

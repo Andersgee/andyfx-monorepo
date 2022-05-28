@@ -117,9 +117,11 @@ export async function signup(req: Request, res: Response) {
     if (existingUser) {
       return res.status(400).json({ email: "Aleady exist" });
     }
+    /*
     if (password !== confirmPassword) {
       return res.status(400).json({ confirmPassword: "Does not match" });
     }
+    */
 
     const hashedPassword = await bcrypt.hash(password, 12);
     const user = await UserModel.create({

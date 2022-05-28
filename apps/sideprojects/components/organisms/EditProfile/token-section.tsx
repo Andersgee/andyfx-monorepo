@@ -1,105 +1,84 @@
-import { useUserContext } from "contexts/User";
-import api from "lib/api";
-import React from "react";
+import { useTokenContext } from "contexts/Token";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Button, Tooltip, Code } from "ui/atoms";
-import { ContentCopy, Delete, Add } from "ui/icons";
-
-const copyToClipboard = (str: string) => {
-  return window?.navigator.clipboard.writeText(str);
-};
+import { Button, Tooltip, Code, ClipboardCopyButton } from "ui/atoms";
+import { ContentCopyIcon, DeleteIcon, AddIcon } from "ui/icons";
 
 type Props = {
   className?: string;
 };
 
 const usage_code = `async function getAccessToken() {
-  const body = {refreshToken: "YOUR_TOKEN_HERE"}
-
-  const data = await fetch("https://api.andyfx.se/token", {
-    method: "POST", 
-    body: JSON.stringify(body)
-  }).then(res=>res.json())
-  
-  console.log(data)
-  return data.accessToken
+  const res = await fetch("https://api.andyfx.se/token", { 
+    headers: { Authorization: "YOUR_REFRESH_TOKEN" } 
+  });
+  const { accessToken, expires_in_seconds } = await res.json();
+  return accessToken
 }
 
-async function changeMyName(newName, access_token) {
-  const updatedUser = {name: newName}
+async function changeMyName(access_token) {
+  const update = {name: "YOUR NEW NAME"}
 
-  const data = await fetch("https://api.andyfx.se/user", {
+  const res = await fetch("https://api.andyfx.se/user", {
     method: "PATCH", 
-    headers: {
-      Authorization: \`Bearer \${access_token}\`
-    }, 
-    body: JSON.stringify(updatedUser)
-  }).then(res=>res.json())
-  
-  console.log(data)
-  return data
+    headers: { Authorization: \`Bearer \${access_token}\`}, 
+    body: JSON.stringify(update)
+  })
 }`;
 
+const rtf1 = new Intl.RelativeTimeFormat("sv", { style: "narrow" });
+
 export default function TokenSection({ className }: Props) {
-  const { token, setToken } = useUserContext();
+  const { refreshToken, accessToken, expireTime, revokeRefreshToken, getRefreshToken, getAccessToken } =
+    useTokenContext();
+  const [remainingSeconds, setRemainingSeconds] = useState(0);
 
-  const getRefreshToken = () => {
-    api
-      .get("/token/generate")
-      .then((json) => {
-        const { refreshToken } = json;
-        setToken({ refreshToken });
-      })
-      .catch((err) => console.log(err));
-  };
-
-  const getAccessToken = () => {
-    api
-      .post("/token", { refreshToken: token?.refreshToken })
-      .then((json) => {
-        console.log("getAccessToken, json:", json);
-      })
-      .catch((err) => console.log(err));
-  };
-
-  const revokeRefreshToken = () => {
-    api
-      .remove("/token")
-      .then((json) => {
-        setToken(undefined);
-        console.log("revokeRefreshToken, json:", json);
-      })
-      .catch((err) => console.log(err));
-  };
+  useEffect(() => {
+    const timer = setInterval(
+      () => setRemainingSeconds(expireTime ? Math.round(0.001 * (expireTime - Date.now())) : 0),
+      1000
+    );
+    return () => clearInterval(timer);
+  }, [expireTime]);
 
   return (
     <Container className={className}>
       <Title>API key</Title>
-      {token ? (
+      {refreshToken ? (
         <>
           <Token>
-            <TokenString>{token.refreshToken}</TokenString>
+            <TokenString>refreshToken: {refreshToken}</TokenString>
 
-            <Tooltip label="copy">
-              <button onClick={() => copyToClipboard("hej hopp").then(() => console.log("copied"))}>
-                <ContentCopy />
-              </button>
-            </Tooltip>
-            <Tooltip label="revoke">
-              <button onClick={revokeRefreshToken}>
-                <Delete />
-              </button>
-            </Tooltip>
+            <ClipboardCopyButton data={refreshToken}>
+              <ContentCopyIcon />
+            </ClipboardCopyButton>
+
+            <button onClick={revokeRefreshToken}>
+              <DeleteIcon />
+            </button>
           </Token>
 
           <Button onClick={getAccessToken}>getAccessToken</Button>
+
+          {accessToken && (
+            <>
+              <Token>
+                <TokenString>accessToken: {accessToken}</TokenString>
+
+                <ClipboardCopyButton data={accessToken}>
+                  <ContentCopyIcon />
+                </ClipboardCopyButton>
+              </Token>
+              <p>expires in {Math.round(remainingSeconds / 60)} minutes</p>
+            </>
+          )}
           <Code code={usage_code} language="javascript" />
         </>
       ) : (
         <>
           <Tooltip label="get refresh token">
             <button onClick={getRefreshToken}>
-              <Add />
+              <AddIcon />
             </button>
           </Tooltip>
         </>

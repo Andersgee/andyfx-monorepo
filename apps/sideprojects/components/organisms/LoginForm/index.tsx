@@ -7,6 +7,7 @@ import { Button, Divider } from "ui/atoms";
 import GoogleSigninButton from "atoms/GoogleSigninButton";
 import Switch from "./Switch";
 import { UserContext } from "contexts/User";
+import { useRouter } from "next/router";
 
 type Props = {
   className?: string;
@@ -16,14 +17,24 @@ const initialValues = {
   name: "",
   email: "",
   password: "",
-  confirmPassword: "",
 };
 
 export type Values = typeof initialValues;
 
 export default function LoginForm({ className }: Props) {
-  const { handleLoginReponse } = useContext(UserContext);
-  const [isSignup, setIsSignup] = useState(false);
+  const router = useRouter();
+  const { signup } = router.query;
+  const isSignup = signup == "1" ? true : false;
+
+  const { getMyUser } = useContext(UserContext);
+
+  const setSignupQuery = (bool: boolean) => {
+    // ?signup=1 if true, nothing otherwise
+    const query = bool ? { signup: "1" } : undefined;
+    router.push({ pathname: router.pathname, query }, undefined, {
+      scroll: false,
+    });
+  };
 
   const onFailure = (err: any) => console.log(err);
 
@@ -32,12 +43,12 @@ export default function LoginForm({ className }: Props) {
       initialValues={initialValues}
       validate={(values) => validate(values, isSignup)}
       onSubmit={(values, helpers) => {
-        onSubmit(values, helpers, isSignup, handleLoginReponse);
+        onSubmit(values, helpers, isSignup, getMyUser);
       }}
     >
       {({ values, errors, status, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
         <Form onSubmit={handleSubmit} className={className}>
-          <Switch isSignup={isSignup} setIsSignup={setIsSignup} />
+          <Switch isSignup={isSignup} setSignupQuery={setSignupQuery} />
           <Container>
             <div>
               <div>
@@ -72,23 +83,6 @@ export default function LoginForm({ className }: Props) {
                   value={values.password}
                   errorText={!!errors.password && !!touched.password && errors.password}
                 />
-                {isSignup && (
-                  <Password
-                    label="Password (again)"
-                    name="confirmPassword"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.confirmPassword}
-                    errorText={!!errors.confirmPassword && !!touched.confirmPassword && errors.confirmPassword}
-                  />
-                )}
-                {!isSignup && (
-                  <ForgotPasswordContainer>
-                    <ForgotPasswordLink tabIndex={-1} href="">
-                      Forgot password?
-                    </ForgotPasswordLink>
-                  </ForgotPasswordContainer>
-                )}
               </div>
 
               <SubmitSection>
@@ -96,6 +90,16 @@ export default function LoginForm({ className }: Props) {
                   {isSignup ? "Sign up" : "Sign In"}
                 </SubmitButton>
               </SubmitSection>
+
+              <HelpContainer>
+                {isSignup ? (
+                  <HelpButton type="button" onClick={() => setSignupQuery(false)}>
+                    Already have an account?
+                  </HelpButton>
+                ) : (
+                  <HelpButton type="button">Forgot password?</HelpButton>
+                )}
+              </HelpContainer>
 
               <Divider text="or" />
               <GoogleSection>
@@ -113,14 +117,20 @@ const Form = styled.form`
   box-shadow: ${(props) => props.theme.shadow[0]};
 `;
 
-const ForgotPasswordContainer = styled.div`
+const HelpContainer = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
 
-const ForgotPasswordLink = styled.a`
-  margin-left: 1em;
+const HelpButton = styled.button`
   font-size: ${(props) => props.theme.font.size.xsmall};
+  font-weight: ${(props) => props.theme.font.weight.regular};
+  text-transform: none;
+  color: ${(props) => props.theme.color.text.primary};
+
+  :hover {
+    text-decoration: underline 1px dotted;
+  }
 `;
 
 const SubmitButton = styled(Button)`
@@ -137,7 +147,7 @@ const Container = styled.div`
 `;
 
 const SubmitSection = styled.div`
-  margin: 1rem 0 1.5rem 0;
+  margin: 1rem 0 0.5rem 0;
   display: flex;
   justify-content: center;
 `;

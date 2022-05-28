@@ -38,7 +38,7 @@ export const GlobalStyle = createGlobalStyle`
    line-height: 1;
  }
 
- pre code {
+code {
   font-family: ${(props) => props.theme.font.family.code};
   display: block;
   background: none;
@@ -84,6 +84,27 @@ export const GlobalStyle = createGlobalStyle`
      outline-offset: 0px; //dont -1 offset if inside paragraph
    }
  }
+
+ pre, textarea {
+   font-family: ${(props) => props.theme.font.family.body};
+   //same as p but without max-width and padding-bottom
+   //max-width: 55ch;
+   letter-spacing: 0.009375em;
+   word-spacing: 0.009375em;
+   //padding: 0 0 0.875em 0;
+   text-indent: 0;
+   white-space: pre-wrap;
+   word-wrap: break-word;
+   font-kerning: normal;
+   line-height: 1.5;
+   font-weight: ${(props) => props.theme.font.weight.regular};
+   font-size: ${(props) => props.theme.font.size.medium};
+   color: ${(props) => props.theme.color.text.primary};
+
+   a {
+     outline-offset: 0px; //dont -1 offset if inside paragraph
+   }
+ }
  
  
  a {
@@ -112,8 +133,7 @@ export const GlobalStyle = createGlobalStyle`
     outline-offset: -1px;
 
     &:focus-visible {
-      outline: 1px solid ${(props) => props.theme.color.accent};
-      
+      outline: 1px solid ${(props) => props.theme.color.accent};      
     }
 
     svg:hover circle,

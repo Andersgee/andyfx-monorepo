@@ -20,8 +20,8 @@ export default function LoginDialog({ className }: Props) {
   const handleClickOutside = () => setOpen(false);
   useOnClickOutside(ref, handleClickOutside);
 
-  const { userId } = useUserContext();
-  if (userId || !open) {
+  const { user } = useUserContext();
+  if (user || !open) {
     return null;
   }
   return (

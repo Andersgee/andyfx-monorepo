@@ -33,13 +33,20 @@ export default function BigCard({
           <Title>{title}</Title>
           <Description>{description}</Description>
         </div>
-        <ActionButton href={href} background={buttonbackground}>
-          View Project
-        </ActionButton>
+        <ButtonContainer>
+          <ActionButton href={href} background={buttonbackground}>
+            {title}
+          </ActionButton>
+        </ButtonContainer>
       </Content>
     </Container>
   );
 }
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const Content = styled.div`
   grid-area: content;
@@ -48,7 +55,7 @@ const Content = styled.div`
   justify-content: space-between;
 
   padding: 1rem;
-  align-items: center;
+  //align-items: center;
 
   @media ${(props) => props.theme.media.md_and_above} {
     padding: 2rem;
@@ -85,7 +92,10 @@ const Img = styled(ImageCover)`
 
 const Title = styled.h3``;
 
-const Description = styled.p``;
+const Description = styled.p`
+  flex: 1;
+  max-width: 100%;
+`;
 
 interface ActionButtonProps {
   background?: string;
@@ -99,6 +109,8 @@ const ActionButton = styled.a<ActionButtonProps>`
   font-weight: ${(props) => props.theme.font.weight.bold};
   transition: background-color ${(props) => props.theme.transition.fast};
   color: #fff;
+
+  //text-shadow: 1px 1px 0px black, 1px -1px 0px black, -1px 1px 0px black, -1px -1px 0px black;
 
   &:link {
     //unvisited

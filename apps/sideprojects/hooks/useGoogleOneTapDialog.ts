@@ -7,12 +7,12 @@ import { useUserContext } from "contexts/User";
  * doesnt return anything.
  */
 export function useGoogleOneTapDialog() {
-  const { userId } = useUserContext();
+  const { user } = useUserContext();
   useEffect(() => {
     setTimeout(() => {
-      if (!userId) {
+      if (!user) {
         window?.google?.accounts.id.prompt(); //display the One Tap dialog
       }
     }, 3000);
-  }, [userId]);
+  }, [user]);
 }

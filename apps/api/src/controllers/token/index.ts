@@ -59,9 +59,9 @@ export async function revokeRefreshToken(req: Request, res: Response) {
  */
 export async function generateAccessToken(req: Request, res: Response) {
   try {
-    const { refreshToken } = req.body;
+    const refreshToken = req.headers.authorization;
     if (!refreshToken) {
-      return res.status(401).json({ message: "Need refreshToken in body." });
+      return res.status(401).json({ message: "No refresh token in authorization header." });
     }
 
     const token = await TokenModel.findOne({ refreshToken });

@@ -3,7 +3,7 @@ import { ServerStyleSheet } from "styled-components";
 
 /**
  * Next.js will automatically inline font CSS at build time
- * see: https://nextjs.org/docs/basic-features/font-optimization
+ * @see https://nextjs.org/docs/basic-features/font-optimization
  *
  * The getInitialProps stuff is for styled-components. "seal" styles at build time. prevent FOUC.
  */
