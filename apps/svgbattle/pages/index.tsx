@@ -10,8 +10,8 @@ const HomePage: NextPage = () => {
       <Head
         title="Svg Battle"
         description="Svg Battle. Writing Css Battle but in svg."
-        domainUrl="https://svgbattle.andyfx.se"
-        url="https://svgbattle.andyfx.se"
+        domainUrl="https://svgbattle.andyfx.net"
+        url="https://svgbattle.andyfx.net"
       />
       <Layout>
         <article>

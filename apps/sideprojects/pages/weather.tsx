@@ -13,8 +13,8 @@ const Index: NextPage = () => {
         <Head
           title="sideprojects - weather"
           description="Weather forecast in both visual and table form."
-          domainUrl="https://web.andyfx.se"
-          url="https://web.andyfx.se/weather"
+          domainUrl="https://web.andyfx.net"
+          url="https://web.andyfx.net/weather"
         />
         <Layout>
           <WeatherTable />

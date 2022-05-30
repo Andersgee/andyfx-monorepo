@@ -10,8 +10,8 @@ const Index: NextPage = () => {
       <Head
         title="sideprojects - news"
         description="Simple overview of reddit news."
-        domainUrl="https://web.andyfx.se"
-        url="https://web.andyfx.se/news"
+        domainUrl="https://web.andyfx.net"
+        url="https://web.andyfx.net/news"
       />
       <LoginDialog />
       <Layout>

@@ -10,8 +10,8 @@ const Page: NextPage = () => {
       <Head
         title="andyfx"
         description="Andyfx latest web projects and contact."
-        domainUrl="https://www.andyfx.se"
-        url="https://www.andyfx.se"
+        domainUrl="https://www.andyfx.net"
+        url="https://www.andyfx.net"
       />
       <Layout>
         <article>

@@ -8,8 +8,8 @@ const Page: NextPage = () => {
       <Head
         title="sideprojects"
         description="Various sideprojects and personally useful web apps."
-        domainUrl="https://web.andyfx.se"
-        url="https://web.andyfx.se"
+        domainUrl="https://web.andyfx.net"
+        url="https://web.andyfx.net"
       />
       <Layout>
         <p>Content</p>
