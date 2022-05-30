@@ -21,7 +21,7 @@ export default function ProjectCards({ className }: Props) {
         description="Css Battle but written in svg. Includes some svg animations."
         imgSrc={img_svgbattle}
         imgAlt="svg battle"
-        href="https://svgbattle.andyfx.se"
+        href="https://svgbattle.andyfx.net"
         buttonbackground="linear-gradient(135deg, #14313E, #93830F)"
       />
       <BigCard
