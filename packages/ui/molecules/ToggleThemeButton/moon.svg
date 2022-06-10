@@ -31,7 +31,7 @@ M 200 200 m 84.8528 -84.8528 l 28.2843 -28.2843
 <animate
 attributeName="d"
 fill="freeze"
-dur="0.5s"
+dur="1.5s"
 begin="0s"
 restart="always"
 values="

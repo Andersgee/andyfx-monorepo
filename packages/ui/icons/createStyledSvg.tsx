@@ -12,7 +12,7 @@ export default function createStyledSvg(Svg: React.FC<React.SVGProps<SVGSVGEleme
   `;
 
   const Component = ({ className }: ComponentProps, ref: React.ForwardedRef<SVGSVGElement>) => {
-    return <Container className={className} ref={ref} />;
+    return <Container className={className} ref={ref} data-icon />;
   };
 
   return React.memo(React.forwardRef(Component));

@@ -72,6 +72,7 @@ export default function AutoComplete({ value, onChange, suggestions, onSelect, l
   return (
     <Container ref={containerRef} className={className}>
       <Input
+        id={id}
         name="search"
         type="text"
         autoComplete="off"

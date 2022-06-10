@@ -22,6 +22,13 @@ const Button = styled.button``;
 
 const Sun = styled(sun)`
   ${iconstyle}
+
+  &:hover {
+    * {
+      fill: ${(props) => props.theme.color.icon.hover};
+      stroke: ${(props) => props.theme.color.icon.hover};
+    }
+  }
 `;
 
 const Moon = styled(moon)`
@@ -29,5 +36,17 @@ const Moon = styled(moon)`
   // background color on ecclipse
   circle:last-of-type {
     fill: ${(props) => props.theme.color.background};
+  }
+
+  &:hover {
+    circle {
+      fill: ${(props) => props.theme.color.icon.hover};
+    }
+    path {
+      stroke: ${(props) => props.theme.color.icon.hover};
+    }
+    circle:last-of-type {
+      fill: ${(props) => props.theme.color.background};
+    }
   }
 `;

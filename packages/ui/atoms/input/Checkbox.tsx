@@ -37,6 +37,7 @@ const StyledCheckboxIcon = styled(CheckboxIcon)<CheckedProps>`
 
   path {
     stroke: ${(props) => (props.checked ? props.theme.color.icon.fill : "none")};
+    stroke-width: ${(props) => (props.checked ? props.theme.color.icon.fill : "0")};
   }
 `;
 

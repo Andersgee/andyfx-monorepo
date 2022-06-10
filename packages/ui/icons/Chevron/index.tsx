@@ -12,7 +12,7 @@ type Props = {
 };
 
 export default function Chevron({ dir = "down", className }: Props) {
-  return <Icon dir={dir} className={className} />;
+  return <Icon dir={dir} className={className} data-icon />;
 }
 
 interface IconProps {

@@ -11,3 +11,4 @@ export { default as CheckboxIcon } from "./Checkbox";
 export { default as ClearIcon } from "./Clear";
 export { default as EditIcon } from "./Edit";
 export { default as DragHandleIcon } from "./DragHandle";
+export { default as FormatSizeIcon } from "./FormatSize";

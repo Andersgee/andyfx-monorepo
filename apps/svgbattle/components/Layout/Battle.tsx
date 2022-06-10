@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Signature from "ui/molecules/Signature";
+//import Signature from "ui/molecules/Signature";
 import { AndyfxIcon } from "ui/icons";
 import Navbar from "ui/molecules/Navbar";
 import ToggleThemeButton from "ui/molecules/ToggleThemeButton";
@@ -7,30 +7,26 @@ import ToggleThemeButton from "ui/molecules/ToggleThemeButton";
 interface Props {
   className?: string;
   children: React.ReactNode;
-  defaultHeader?: boolean;
 }
 
-export default function Layout({ defaultHeader = true, className, children }: Props) {
+export default function Layout({ className, children }: Props) {
   return (
     <Container className={className}>
       <Nav>
         <ToggleThemeButton />
       </Nav>
-      {defaultHeader && (
-        <Header>
-          <Logo aria-label="Andyfx Logo" />
-          <Title>Andyfx</Title>
-        </Header>
-      )}
       <Main>{children}</Main>
-
       <Footer>
         <div>
           <div>
-            <h2>Contact</h2>
-            <p>andersgee@gmail.com</p>
+            <P>svgbattle</P>
           </div>
-          <Signature />
+          <div>
+            <LogoLink href="https://www.andyfx.net">
+              <Logo aria-label="Andyfx Logo" />
+              <Title>Andyfx</Title>
+            </LogoLink>
+          </div>
         </div>
       </Footer>
     </Container>
@@ -38,11 +34,11 @@ export default function Layout({ defaultHeader = true, className, children }: Pr
 }
 
 const Container = styled.div`
+  min-height: 100vh;
   width: 100%;
   display: grid;
   grid-template:
     "nav" 3rem
-    "header" auto
     "main" auto
     "footer" auto
     / auto;
@@ -53,13 +49,20 @@ const Logo = styled(AndyfxIcon)`
   height: 100px;
 `;
 
-const Header = styled.header`
-  grid-area: header;
-  position: relative;
-  height: max(13rem, 33vh);
+const LogoLink = styled.a`
+  //position: relative;
+  //height: max(13rem, 33vh);
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+`;
+
+const P = styled.p`
+  //color: ${(props) => props.theme.color.text.secondary};
+  font-weight: ${(props) => props.theme.font.weight.regular};
+  font-size: 2rem;
+  padding: 0.25rem 0 0 0;
 `;
 
 const Title = styled.h1`
@@ -92,7 +95,7 @@ const Footer = styled.footer`
   > div {
     display: flex;
     justify-content: center;
-    padding: 2rem;
+    padding: 1.5rem;
     flex-direction: column;
     align-items: center;
     text-align: center;

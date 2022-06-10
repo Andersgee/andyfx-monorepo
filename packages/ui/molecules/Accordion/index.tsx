@@ -42,12 +42,6 @@ const Button = styled.button`
   text-transform: none;
   color: ${(props) => props.theme.color.text.primary};
   font-weight: ${(props) => props.theme.font.weight.medium};
-
-  &:hover {
-    path {
-      stroke: ${(props) => props.theme.color.icon.hover};
-    }
-  }
 `;
 
 interface ContentProps {

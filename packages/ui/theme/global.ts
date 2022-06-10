@@ -135,7 +135,7 @@ code {
     &:focus-visible {
       outline: 1px solid ${(props) => props.theme.color.accent};      
     }
-
+/*
     svg:hover circle,
     svg:hover line,
     svg:hover path,
@@ -145,6 +145,19 @@ code {
     svg:hover rect {
       fill: ${(props) => props.theme.color.icon.hover};
       stroke: ${(props) => props.theme.color.icon.hover};
+      fill: red;
+    }
+  */  
+  }
+
+  button:hover, a:hover {
+    svg[data-icon] {
+      *:not([fill="none"]) {
+        fill: ${(props) => props.theme.color.icon.hover};
+      }
+      *:not([stroke="none"]) {
+        stroke: ${(props) => props.theme.color.icon.hover};
+      }
     }
   }
 

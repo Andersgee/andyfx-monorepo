@@ -12,7 +12,7 @@ type Props = {
 };
 
 export default function DragIndicator({ dir = "vertical", className }: Props) {
-  return <Icon dir={dir} className={className} />;
+  return <Icon dir={dir} className={className} data-icon />;
 }
 
 interface IconProps {

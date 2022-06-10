@@ -11,5 +11,5 @@ type Props = {
 };
 
 export default function Visibility({ on, className }: Props) {
-  return on ? <VisibilityOn className={className} /> : <VisibilityOff className={className} />;
+  return on ? <VisibilityOn className={className} data-icon /> : <VisibilityOff className={className} data-icon />;
 }

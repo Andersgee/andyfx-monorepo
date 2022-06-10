@@ -8,13 +8,12 @@ const iconstyle = css`
   outline-offset: -1px;
   stroke-width: 0; //remove default default stroke-width 1 on elements.
 
-  * {
+  *:not([stroke="none"]) {
     stroke: ${(props) => props.theme.color.icon.fill};
-    fill: ${(props) => props.theme.color.icon.fill};
   }
 
-  *[fill="none"] {
-    fill: none;
+  *:not([fill="none"]) {
+    fill: ${(props) => props.theme.color.icon.fill};
   }
 `;
 

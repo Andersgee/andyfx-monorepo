@@ -1,0 +1,43 @@
+import { useEffect, useState } from "react";
+
+/**
+ * src, width and height are required.
+ *
+ * Does nothing if any of them not provided.
+ */
+export function useImageData(src?: string, width?: number, height?: number) {
+  const [imagedata, setImagedata] = useState<ImageData | undefined>(undefined);
+
+  useEffect(() => {
+    if (!src || !width || !height) {
+      return;
+    }
+
+    const canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) {
+      return;
+    }
+    const image = new Image();
+    image.addEventListener(
+      "load",
+      () => {
+        ctx.drawImage(image, 0, 0, width, height);
+        const data = ctx.getImageData(0, 0, width, height);
+        setImagedata(data);
+      },
+      { once: true }
+    );
+    image.src = src;
+
+    return () => {
+      canvas?.remove();
+      image?.remove();
+    };
+  }, [src, width, height]);
+
+  return imagedata;
+}
