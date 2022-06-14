@@ -1,12 +1,12 @@
 import React, { useEffect, useId, useRef } from "react";
 import styled, { css } from "styled-components";
 import Prism from "prismjs";
-import { DragHandleIcon, FormatSizeIcon } from "ui/icons";
+import { DragHandleIcon, FormatSizeIcon } from "@andyfx/ui/icons";
 import { useCodeContext } from "contexts/Code";
 import Header from "./Header";
 
 import "prismjs/components/prism-markup";
-import type { Target } from "targets";
+import type { Target } from "@andyfx/svgbattle-api/src/models/target";
 
 type Props = {
   target: Target;

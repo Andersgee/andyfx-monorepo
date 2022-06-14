@@ -1,4 +1,4 @@
-import api from "lib/api";
+import accounts from "lib/accounts";
 import React, { createContext, useContext, useState } from "react";
 
 interface Props {
@@ -33,7 +33,7 @@ export function TokenProvider({ children }: ProviderProps) {
       return;
     }
     try {
-      const res = await api.request("/token", { headers: { Authorization: refreshToken } });
+      const res = await accounts.request("/token", { headers: { Authorization: refreshToken } });
       const { accessToken, expires_in_seconds } = await res.json();
       setAccessToken(accessToken);
       setExpireTime(Date.now() + parseInt(expires_in_seconds, 10) * 1000);
@@ -45,7 +45,7 @@ export function TokenProvider({ children }: ProviderProps) {
 
   const getRefreshToken = async () => {
     try {
-      const { refreshToken } = await api.get("/token/refresh");
+      const { refreshToken } = await accounts.get("/token/refresh");
       setRefreshToken(refreshToken);
     } catch (err) {
       setRefreshToken(undefined);
@@ -54,7 +54,7 @@ export function TokenProvider({ children }: ProviderProps) {
 
   const revokeRefreshToken = async () => {
     try {
-      await api.remove("/token/refresh");
+      await accounts.remove("/token/refresh");
       setRefreshToken(undefined);
       setAccessToken(undefined);
       setExpireTime(undefined);

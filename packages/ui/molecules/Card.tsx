@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import { ImageCover } from "../atoms/ImageCover";
-import Button from "../atoms/Button";
-import Link from "../atoms/Link";
+import { ImageCover, Button, Link } from "../atoms";
 
 interface Props {
   imgSrc: string;
@@ -12,7 +10,7 @@ interface Props {
   className?: string;
 }
 
-export function Card({ imgSrc, imgAlt, href, title, description, className }: Props) {
+export default function Card({ imgSrc, imgAlt, href, title, description, className }: Props) {
   return (
     <Container className={className}>
       <Link href={href}>

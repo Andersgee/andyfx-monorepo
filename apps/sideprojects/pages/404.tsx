@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import DefaultLink from "ui/atoms/Link";
+import DefaultLink from "@andyfx/ui/atoms/Link";
 import styled from "styled-components";
 
 const Page: NextPage = () => {

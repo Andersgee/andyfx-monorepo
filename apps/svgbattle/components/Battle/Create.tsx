@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Editor from "./Editor";
 import Output from "./Output/Create";
-import type { Target } from "targets";
+import type { Target } from "@andyfx/svgbattle-api/src/models/target";
+import Publish from "./Publish/Publish";
 
 type Props = {
   className?: string;
@@ -11,16 +12,6 @@ type Props = {
 export default function Create({ className }: Props) {
   const [width, setWidth] = useState(240);
   const [height, setHeight] = useState(240);
-
-  const targetx: Target = {
-    colors: ["color1", "color2"],
-    description: "description",
-    width: 240,
-    height: 240,
-    placeholder: "placeholder",
-    svg: "svg",
-    title: "title",
-  };
 
   const createdTarget = {
     width: 240,
@@ -31,9 +22,14 @@ export default function Create({ className }: Props) {
     <Container w={createdTarget.width} className={className}>
       <StyledEditor target={createdTarget} language="svg" />
       <StyledOutput target={createdTarget} />
+      <StyledPublish />
     </Container>
   );
 }
+
+const StyledPublish = styled(Publish)`
+  grid-area: publish;
+`;
 
 interface ContainerProps {
   readonly w: number;
@@ -49,12 +45,14 @@ const Container = styled.div<ContainerProps>`
     "information" auto
     "output" auto
     "editor" auto
+    "publish" auto
     / 1fr;
 
   @media only screen and (min-width: ${(props) => props.w * 3 + 16}px) {
     grid-template:
       "information information" auto
       "editor output" auto
+      "publish publish" auto
       / 1fr auto;
   }
 `;

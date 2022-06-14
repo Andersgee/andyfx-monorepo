@@ -2,8 +2,8 @@ import { useState, useRef, ReactNode } from "react";
 import styled from "styled-components";
 import DefaultLink from "../atoms/Link";
 import { useOnClickOutside } from "usehooks-ts";
-import { MenuIcon } from "ui/icons";
-import { Tooltip } from "ui/atoms";
+import { MenuIcon } from "@andyfx/ui/icons";
+import { Tooltip } from "@andyfx/ui/atoms";
 
 interface Props {
   className?: string;

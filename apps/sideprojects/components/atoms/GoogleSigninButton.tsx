@@ -1,5 +1,5 @@
 import { useContext, useEffect, useId } from "react";
-import { ThemeContext } from "ui";
+import { ThemeContext } from "@andyfx/ui";
 
 type Props = {
   className?: string;

@@ -5,7 +5,7 @@ import Output from "./Output";
 import Colors from "./Colors";
 import TargetComponent from "./Target";
 import Information from "./Information";
-import type { Target } from "targets";
+import type { Target } from "@andyfx/svgbattle-api/src/models/target";
 
 type Props = {
   target: Target;

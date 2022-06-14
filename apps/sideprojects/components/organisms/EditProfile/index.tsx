@@ -1,10 +1,10 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { useUserContext } from "contexts/User";
-import { Divider, Link, Button, Tooltip } from "ui/atoms";
+import { Divider, Link, Button, Tooltip } from "@andyfx/ui/atoms";
 import LoginForm from "organisms/LoginForm";
-import { Text } from "ui/atoms/input";
-import api from "lib/api";
+import { Text } from "@andyfx/ui/atoms/input";
+import accounts from "lib/accounts";
 import TokenSection from "./token-section";
 
 type Props = {
@@ -20,7 +20,7 @@ export default function EditProfile({ className }: Props) {
   }
 
   const handleClick = () =>
-    api
+    accounts
       .update(`/user`, { name })
       .then(() => {
         getMyUser();
@@ -28,7 +28,7 @@ export default function EditProfile({ className }: Props) {
       .catch((err) => console.log(err));
 
   const handleRemove = () => {
-    api
+    accounts
       .remove(`/user`)
       .then(() => {
         logout();

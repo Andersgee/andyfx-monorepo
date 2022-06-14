@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { usePutImageData } from "hooks/usePutImageData";
 import Header from "./Header";
-import type { Target } from "targets";
+import type { Target } from "@andyfx/svgbattle-api/src/models/target";
 import { useImageDataFromSvg } from "hooks/useImageDataFromSvg";
 import { useCodeContext } from "contexts/Code";
 
@@ -10,11 +10,6 @@ type Props = {
   target: Target;
   className?: string;
 };
-
-/*
-<rect x="24" y="24" width="10" height="10" fill="#00c"/>
-<circle cy="24" cx="24" r="10" fill="#00c"/>
-*/
 
 export default function TargetComponent({ target, className }: Props) {
   const { setCode } = useCodeContext();

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { ChevronIcon } from "ui/icons";
+import { ChevronIcon } from "@andyfx/ui/icons";
 
 type Props = {
   summary: React.ReactNode;

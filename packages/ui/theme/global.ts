@@ -106,26 +106,33 @@ code {
    }
  }
  
- 
- a {
+
+  a {
     color: ${(props) => props.theme.color.text.primary};
     text-decoration: underline dotted;
-     //text-decoration: none;
-     &:link {
-       //unvisited
-       color: ${(props) => props.theme.color.text.primary};
-     }
-     &:visited {
-      color: ${(props) => props.theme.color.text.primary};
-     }
-     &:hover {
-       color: ${(props) => props.theme.color.text.primary};
-       text-decoration: underline;
-      }
-     &:active {
-      color: ${(props) => props.theme.color.text.primary};
-     }
-   }
+    //text-decoration: none;
+    color: ${(props) => props.theme.color.text.primary};
+    /*
+    &:link {
+    //unvisited
+    color: ${(props) => props.theme.color.text.primary};
+    }
+    &:visited {
+    color: ${(props) => props.theme.color.text.primary};
+    }
+    &:hover {
+    color: ${(props) => props.theme.color.text.primary};
+    text-decoration: underline;
+    }
+    &:active {
+    color: ${(props) => props.theme.color.text.primary};
+    }
+    */
+
+    &:hover {
+    text-decoration: underline;
+    }
+  }
 
 
   button, a {

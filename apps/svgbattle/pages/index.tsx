@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import styled from "styled-components";
-import { Head } from "ui/atoms";
+import { Head } from "@andyfx/ui/atoms";
 import Layout from "components/Layout";
 import SvgMosaic from "components/SvgMosaic";
 

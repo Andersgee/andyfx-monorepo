@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Head } from "ui/atoms";
+import { Head } from "@andyfx/ui/atoms";
 import Layout from "templates/Layout";
 import RedditNewsTable from "organisms/RedditNewsTable";
 import LoginDialog from "components/templates/LoginDialog";

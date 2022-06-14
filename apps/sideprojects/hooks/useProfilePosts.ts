@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import api from "lib/api";
-import type { PostPopulated } from "api/src/models/post";
+import type { PostPopulated } from "@andyfx/sideprojects-api/src/models/post";
 
 const fetcher = (route: string) => api.get<PostPopulated[]>(route);
 

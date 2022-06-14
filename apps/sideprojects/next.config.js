@@ -1,7 +1,7 @@
 const withPlugins = require("next-compose-plugins");
-const withTM = require("next-transpile-modules")(["ui"]);
-const svgrconfig = require("configs/webpack-svgr");
-const assetsourceconfig = require("configs/webpack-assetsource");
+const withTM = require("next-transpile-modules")(["@andyfx/ui"]);
+const svgrconfig = require("@andyfx/configs/webpack-svgr");
+const assetsourceconfig = require("@andyfx/configs/webpack-assetsource");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

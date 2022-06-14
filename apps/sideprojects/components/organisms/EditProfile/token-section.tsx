@@ -1,8 +1,8 @@
 import { useTokenContext } from "contexts/Token";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Button, Tooltip, Code, ClipboardCopyButton } from "ui/atoms";
-import { ContentCopyIcon, DeleteIcon, AddIcon } from "ui/icons";
+import { Button, Tooltip, Code, ClipboardCopyButton } from "@andyfx/ui/atoms";
+import { ContentCopyIcon, DeleteIcon, AddIcon } from "@andyfx/ui/icons";
 
 type Props = {
   className?: string;

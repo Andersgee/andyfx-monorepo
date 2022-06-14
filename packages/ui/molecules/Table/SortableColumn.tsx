@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import { ChevronIcon } from "ui/icons";
+import { ChevronIcon } from "@andyfx/ui/icons";
 
 type Props = {
   prop: string;

@@ -1,6 +1,6 @@
 import React, { useId, useState } from "react";
 import styled from "styled-components";
-import { VisibilityIcon } from "ui/icons";
+import { VisibilityIcon } from "@andyfx/ui/icons";
 
 type Props = {
   name: string;

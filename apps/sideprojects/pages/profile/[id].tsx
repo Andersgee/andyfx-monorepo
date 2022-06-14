@@ -1,10 +1,9 @@
 import type { NextPage, GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
-import DefaultLink from "ui/atoms/Link";
 import styled from "styled-components";
 import Layout from "templates/Layout";
 import Profile from "organisms/Profile";
-import { Head } from "ui/atoms";
+import { Head, Link as DefaultLink } from "@andyfx/ui/atoms";
 
 interface Props {
   userId: string;
@@ -34,7 +33,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/user/${params?.id}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL_ACCOUNTS}/user/${params?.id}`);
     const user = await res.json();
     if (res.ok) {
       return {

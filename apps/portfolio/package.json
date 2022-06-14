@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "@andyfx/portfolio",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
@@ -10,8 +10,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "configs": "*",
-    "ui": "*",
+    "@andyfx/configs": "*",
+    "@andyfx/ui": "*",
     "sharp": "^0.30.3",
     "styled-components": "^5.3.5",
     "next": "12.1.5",

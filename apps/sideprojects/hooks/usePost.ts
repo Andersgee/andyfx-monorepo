@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import api from "lib/api";
-import type { Post } from "api/src/models/post";
+import type { Post } from "@andyfx/sideprojects-api/src/models/post";
 
 const fetcher = (route: string) => api.get<Post>(route);
 

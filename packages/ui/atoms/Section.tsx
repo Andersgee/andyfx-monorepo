@@ -5,11 +5,13 @@ interface Props {
 }
 
 /**
+ * If no title is appropriate then dont use a section.
+ *
  * Think of section like a chapter of a book.
  *
  * Must have a `title` attribute in order to get the semantic role 'region'.
  * which is something that is "sufficiently important
- * to be listed in the summary of the page". If no title is appropriate then dont use a section.
+ * to be listed in the summary of the page".
  *
  * Typically starts with a heading, most likely `<h2>`
  *

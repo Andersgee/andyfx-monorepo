@@ -1,8 +1,8 @@
 import styled from "styled-components";
-//import Signature from "ui/molecules/Signature";
-import { AndyfxIcon } from "ui/icons";
-import Navbar from "ui/molecules/Navbar";
-import ToggleThemeButton from "ui/molecules/ToggleThemeButton";
+//import {Signature} from "@andyfx/ui/molecules";
+import { AndyfxIcon } from "@andyfx/ui/icons";
+import { Navbar, ToggleThemeButton } from "@andyfx/ui/molecules";
+import { Link } from "@andyfx/ui/atoms";
 
 interface Props {
   className?: string;
@@ -19,7 +19,7 @@ export default function Layout({ className, children }: Props) {
       <Footer>
         <div>
           <div>
-            <P>svgbattle</P>
+            <StyledLink href="/">svgbattle</StyledLink>
           </div>
           <div>
             <LogoLink href="https://www.andyfx.net">
@@ -40,13 +40,13 @@ const Container = styled.div`
   grid-template:
     "nav" 3rem
     "main" auto
-    "footer" auto
+    "footer" max-content
     / auto;
 `;
 
 const Logo = styled(AndyfxIcon)`
-  width: 120px;
-  height: 100px;
+  width: 60px;
+  height: 50px;
 `;
 
 const LogoLink = styled.a`
@@ -58,17 +58,18 @@ const LogoLink = styled.a`
   text-decoration: none;
 `;
 
-const P = styled.p`
-  //color: ${(props) => props.theme.color.text.secondary};
+const StyledLink = styled(Link)`
+  color: ${(props) => props.theme.color.text.secondary};
   font-weight: ${(props) => props.theme.font.weight.regular};
   font-size: 2rem;
   padding: 0.25rem 0 0 0;
+  text-decoration: none;
 `;
 
 const Title = styled.h1`
   color: ${(props) => props.theme.color.text.secondary};
   font-weight: ${(props) => props.theme.font.weight.regular};
-  font-size: 3rem;
+  font-size: 2rem;
   padding: 0.25rem 0 0 0;
 `;
 

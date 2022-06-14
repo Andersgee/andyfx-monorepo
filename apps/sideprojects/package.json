@@ -1,5 +1,5 @@
 {
-  "name": "sideprojects",
+  "name": "@andyfx/sideprojects",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
@@ -10,9 +10,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "configs": "*",
-    "api": "*",
-    "ui": "*",
+    "@andyfx/sideprojects-api": "*",
+    "@andyfx/accounts-api": "*",
+    "@andyfx/configs": "*",
+    "@andyfx/ui": "*",
     "formik": "^2.2.9",
     "sharp": "^0.30.3",
     "styled-components": "^5.3.5",

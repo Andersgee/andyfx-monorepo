@@ -25,7 +25,7 @@ WORKDIR /app
 COPY --from=installer /app/ .
 COPY --from=pruner /app/out/full/ .
 ENV NODE_ENV=production
-RUN yarn turbo run build --scope=${SCOPE} --include-dependencies --no-deps
+RUN yarn turbo run build --filter=${SCOPE} --include-dependencies --no-deps
 
 FROM base AS runner
 ARG SCOPE
@@ -33,6 +33,6 @@ ENV SCOPE ${SCOPE}
 WORKDIR /app
 COPY --from=builder /app/ .
 ENV NODE_ENV=production
-CMD yarn turbo run start --scope=${SCOPE}
+CMD yarn turbo run start --filter=${SCOPE}
 
 

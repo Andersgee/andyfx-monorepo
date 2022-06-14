@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import sun from "./sun.svg";
 import moon from "./moon.svg";
-import { ThemeContext } from "ui";
-import iconstyle from "ui/theme/iconstyle";
+import { ThemeContext } from "@andyfx/ui";
+import iconstyle from "@andyfx/ui/theme/iconstyle";
 
 type Props = {
   className?: string;

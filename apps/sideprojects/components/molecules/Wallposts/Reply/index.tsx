@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import type { Reply } from "api/src/models/reply";
-import { DeleteIcon, EditIcon } from "ui/icons";
+import type { Reply } from "@andyfx/sideprojects-api/src/models/reply";
+import { DeleteIcon, EditIcon } from "@andyfx/ui/icons";
 import { useUser } from "hooks/useUser";
 import { useMyUser } from "hooks/useMyUser";
-import { Link } from "ui/atoms";
+import { Link } from "@andyfx/ui/atoms";
 import { dateformatNumber } from "lib/date";
 import Edit from "./Edit";
 import api from "lib/api";

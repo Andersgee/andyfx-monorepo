@@ -1,0 +1,15 @@
+{
+  "extends": "@andyfx/configs/tsconfig-node.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "#src/*": ["src/*"],
+      "#controllers/*": ["src/controllers/*"],
+      "#middleware/*": ["src/middleware/*"],
+      "#models/*": ["src/models/*"],
+      "#routes/*": ["src/routes/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "types"],
+  "exclude": ["node_modules", ".turbo", "dist", "src/**/*.test.ts"]
+}

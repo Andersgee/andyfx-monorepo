@@ -1,11 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { useCodeContext } from "contexts/Code";
-import { useCompareImageData } from "hooks/useCompareImageData";
 import { usePutImageData } from "hooks/usePutImageData";
 import { useImageDataFromSvg } from "hooks/useImageDataFromSvg";
 import Header from "./CreateHeader";
-import type { Target } from "targets";
+import type { Target } from "@andyfx/svgbattle-api/src/models/target";
 
 type Props = {
   target: Target;
@@ -41,6 +40,7 @@ interface CanvasProps {
 }
 
 const OutputCanvas = styled.canvas`
+  color: ${(props) => props.theme.color.text.secondary};
   display: block;
   border: 1px solid ${(props) => props.theme.color.text.disabled};
 `;

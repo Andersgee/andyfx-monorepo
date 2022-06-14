@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import styled from "styled-components";
-import Head from "ui/atoms/Head";
+import Head from "@andyfx/ui/atoms/Head";
 import Layout from "components/Layout";
 import ProjectCards from "components/ProjectCards";
 

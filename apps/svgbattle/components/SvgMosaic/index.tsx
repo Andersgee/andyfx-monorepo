@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { GridItem } from "ui/atoms/";
+import { GridItem, Section } from "@andyfx/ui/atoms/";
 import svgs from "./svgs";
-import { Section } from "ui/atoms";
 
 interface Props {
   className?: string;

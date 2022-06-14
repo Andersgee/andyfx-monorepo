@@ -30,7 +30,9 @@ export default function Text({
   return (
     <Container className={className}>
       <Input id={id} name={name} type={type} value={value} placeholder={placeholder} onChange={onChange} {...rest} />
-      <Label htmlFor={id}>{label}</Label>
+      <Label htmlFor={id} disabled={rest.disabled ? true : false}>
+        {label}
+      </Label>
       <FocusBg></FocusBg>
       {errorText && <ErrorText>{errorText}</ErrorText>}
     </Container>
@@ -44,11 +46,15 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-const Label = styled.label`
+interface LabelProps {
+  readonly disabled: boolean;
+}
+
+const Label = styled.label<LabelProps>`
   position: absolute;
   top: 20px;
   left: 12px;
-  color: ${(props) => props.theme.color.text.secondary};
+  color: ${(props) => (props.disabled ? props.theme.color.text.disabled : props.theme.color.text.secondary)};
   font-size: ${(props) => props.theme.font.size.medium};
   font-weight: ${(props) => props.theme.font.weight.medium};
   transform-origin: top left;

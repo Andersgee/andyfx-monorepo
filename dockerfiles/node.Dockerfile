@@ -1,6 +1,7 @@
 #container from pruned repo, without build
 FROM node:16-alpine as base
 RUN apk update
+RUN apk add git
 
 FROM base AS pruner
 ARG SCOPE
@@ -26,4 +27,4 @@ COPY --from=installer /app/ .
 COPY --from=pruner /app/out/full/ .
 ENV NODE_ENV=production
 #RUN yarn turbo run build --scope=${SCOPE} --include-dependencies --no-deps
-CMD yarn turbo run start --scope=${SCOPE}
+CMD yarn turbo run start --filter=${SCOPE}

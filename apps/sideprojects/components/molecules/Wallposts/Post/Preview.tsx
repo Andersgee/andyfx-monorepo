@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Accordion } from "ui/molecules";
+import { Accordion } from "@andyfx/ui/molecules";
 import Body from "./Body";
 
 type Props = {

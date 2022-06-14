@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Head } from "ui/atoms";
+import { Head } from "@andyfx/ui/atoms";
 import Layout from "templates/Layout";
 import { TokenProvider } from "contexts/Token";
 import EditProfile from "components/organisms/EditProfile";

@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import Signature from "ui/molecules/Signature";
-import { AndyfxIcon } from "ui/icons";
-import Navbar from "ui/molecules/Navbar";
 import { useContext } from "react";
+import { Navbar, Signature } from "@andyfx/ui/molecules";
+import { AndyfxIcon } from "@andyfx/ui/icons";
 import { UserContext } from "contexts/User";
 import TopnavButtons from "organisms/TopnavButtons";
 

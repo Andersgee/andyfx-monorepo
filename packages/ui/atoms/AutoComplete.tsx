@@ -1,6 +1,6 @@
 import React, { useId, useRef, useState } from "react";
 import styled from "styled-components";
-import { ClearIcon } from "ui/icons";
+import { ClearIcon } from "@andyfx/ui/icons";
 import { useOnClickOutside } from "usehooks-ts";
 
 type Props = {

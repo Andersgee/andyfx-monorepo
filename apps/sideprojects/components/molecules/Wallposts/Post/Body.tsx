@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { langFromText, removeFirstWord } from "../utils";
-import { Code as DefaultCode } from "ui/atoms";
+import { Code as DefaultCode } from "@andyfx/ui/atoms";
 
 type Props = {
   text: string;

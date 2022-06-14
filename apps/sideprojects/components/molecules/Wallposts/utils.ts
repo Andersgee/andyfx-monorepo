@@ -1,4 +1,4 @@
-import { languages } from "ui/atoms/Code";
+import { languages } from "@andyfx/ui/atoms/Code";
 
 export function removeFirstWord(str: String) {
   const newline = str.indexOf("\n");

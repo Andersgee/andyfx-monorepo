@@ -1,6 +1,6 @@
 import React, { useEffect, useImperativeHandle, useRef } from "react";
 import styled from "styled-components";
-import { DragHandleIcon } from "ui/icons";
+import { DragHandleIcon } from "@andyfx/ui/icons";
 
 type Props = {
   className?: string;

@@ -5,7 +5,7 @@ import { useCompareImageData } from "hooks/useCompareImageData";
 import { usePutImageData } from "hooks/usePutImageData";
 import { useImageDataFromSvg } from "hooks/useImageDataFromSvg";
 import Header from "./Header";
-import type { Target } from "targets";
+import type { Target } from "@andyfx/svgbattle-api/src/models/target";
 
 type Props = {
   target: Target;
@@ -59,6 +59,7 @@ const DebugCanvas = styled.canvas<CanvasProps>`
 `;
 
 const OutputCanvas = styled.canvas<CanvasProps>`
+  color: ${(props) => props.theme.color.text.secondary};
   display: ${(props) => (props.isDebug ? "none" : "block")};
 `;
 

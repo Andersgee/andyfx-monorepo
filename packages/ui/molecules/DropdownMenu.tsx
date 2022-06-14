@@ -7,7 +7,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export function DropdownMenu({ className, children }: Props) {
+export default function DropdownMenu({ className, children }: Props) {
   const [open, setOpen] = useState(false);
 
   const ref = useRef(null);

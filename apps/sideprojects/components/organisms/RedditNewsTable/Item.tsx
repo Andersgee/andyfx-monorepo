@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import type { Post } from "hooks/useRedditPosts";
 import { scoreformat } from "./utils";
-import { Link } from "ui/atoms";
+import { Link } from "@andyfx/ui/atoms";
 
 type Props = {
   post: Post;

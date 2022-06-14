@@ -1,8 +1,6 @@
 import styled from "styled-components";
-import Signature from "ui/molecules/Signature";
-import Navbar from "ui/molecules/Navbar";
-import { AndyfxIcon } from "ui/icons";
-import ToggleThemeButton from "ui/molecules/ToggleThemeButton";
+import { Signature, Navbar, ToggleThemeButton } from "@andyfx/ui/molecules";
+import { AndyfxIcon } from "@andyfx/ui/icons";
 
 interface Props {
   className?: string;

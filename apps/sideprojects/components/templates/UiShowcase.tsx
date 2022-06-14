@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { GridItem, Paper, AutoComplete } from "ui/atoms";
+import { Text, Password, DatetimeLocal, Checkbox } from "@andyfx/ui/atoms/input";
+import { GridItem, Paper, AutoComplete } from "@andyfx/ui/atoms";
+import { Table, Accordion } from "@andyfx/ui/molecules";
 
-import { Table } from "ui/molecules";
-import { Accordion } from "ui/molecules";
-import { Text, Password, DatetimeLocal, Checkbox } from "ui/atoms/input";
 const people: Record<string, string>[] = [
   { name: "Anders8 Gustafsson", title: "Some title1", email: "Some1@email.com", role: "Some role4" },
   { name: "Anders1 Gustafsson", title: "Some title6", email: "Some2@email.com", role: "Some role7" },

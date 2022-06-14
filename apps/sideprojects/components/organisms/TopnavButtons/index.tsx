@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Tooltip, Link } from "ui/atoms";
-import ToggleThemeButton from "ui/molecules/ToggleThemeButton";
-import { PersonIcon } from "ui/icons";
+import { Tooltip, Link } from "@andyfx/ui/atoms";
+import { ToggleThemeButton } from "@andyfx/ui/molecules";
+import { PersonIcon } from "@andyfx/ui/icons";
 
 type Props = {
   className?: string;

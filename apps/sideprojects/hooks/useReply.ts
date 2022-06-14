@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import api from "lib/api";
-import type { Reply } from "api/src/models/reply";
+import type { Reply } from "@andyfx/sideprojects-api/src/models/reply";
 
 const fetcher = (route: string) => api.get<Reply>(route);
 

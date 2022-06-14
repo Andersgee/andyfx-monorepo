@@ -1,7 +1,6 @@
 import useSWR from "swr";
 import api from "lib/api";
-import type { RedditResponse } from "api/src/models/reddit";
-export type { Post } from "api/src/models/reddit";
+import type { RedditResponse } from "@andyfx/sideprojects-api/src/models/reddit";
 
 const fetcher = async (route: string) => {
   const json = await api.get<RedditResponse>(route);

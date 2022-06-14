@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import PersonSvg from "./person.svg";
-import iconstyle from "ui/theme/iconstyle";
+import iconstyle from "@andyfx/ui/theme/iconstyle";
 
 type Props = {
   name?: string;

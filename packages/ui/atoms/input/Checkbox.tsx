@@ -1,6 +1,6 @@
 import React, { useId } from "react";
 import styled from "styled-components";
-import { CheckboxIcon } from "ui/icons";
+import { CheckboxIcon } from "@andyfx/ui/icons";
 type Props = {
   label?: string;
   checked: boolean;

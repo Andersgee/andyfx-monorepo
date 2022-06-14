@@ -3,11 +3,11 @@ import styled from "styled-components";
 import { dateformatNumber } from "lib/date";
 import { useUser } from "hooks/useUser";
 import { useMyUser } from "hooks/useMyUser";
-import { Link } from "ui/atoms";
+import { Link } from "@andyfx/ui/atoms";
 import Body from "./Body";
-import { EditIcon, DeleteIcon } from "ui/icons";
+import { EditIcon, DeleteIcon } from "@andyfx/ui/icons";
 import Edit from "./Edit";
-import type { PostPopulated } from "api/src/models/post";
+import type { PostPopulated } from "@andyfx/sideprojects-api/src/models/post";
 import api from "lib/api";
 
 type Props = {

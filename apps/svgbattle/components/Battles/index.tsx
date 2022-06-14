@@ -1,33 +1,115 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { GridItem } from "ui/atoms/";
-import { targets } from "targets";
-import { Section } from "ui/atoms";
-import { ImageStatic } from "ui/atoms";
-import images from "./images";
+import { GridItem, Section } from "@andyfx/ui/atoms/";
+//import { ImageStatic } from "@andyfx/ui/atoms";
+import { AddIcon } from "@andyfx/ui/icons";
+import NextImage from "next/image";
+import type { Target } from "@andyfx/svgbattle-api/src/models/target";
+
 interface Props {
+  targets: Target[];
   className?: string;
 }
 
-export default function Battles({ className }: Props) {
+function svgObjectUrl(svg: string) {
+  return URL.createObjectURL(
+    new Blob([svg], {
+      type: "image/svg+xml",
+    })
+  );
+}
+
+export default function Battles({ targets, className }: Props) {
+  const [dataurls, setDataurls] = useState<string[]>(() => targets.map(() => "/battle/placeholder.svg"));
+  useEffect(() => {
+    const urls = targets.map((target) => svgObjectUrl(target.svg));
+    setDataurls(urls);
+  }, [targets]);
+
   return (
-    <Container className={className}>
-      {targets.map((target, i) => {
-        return (
-          <Item key={i} width={1}>
-            <a href={`/battle/${i}`}>
-              <ImageStatic src={images[i]} alt={target.title} />
-              <Label>{target.title}</Label>
-            </a>
-          </Item>
-        );
-      })}
+    <Container title="battles" className={className}>
+      <Item>
+        <A href={`/b/new`}>
+          <AddContainer width={200} height={200}>
+            <StyledAddIcon />
+          </AddContainer>
+          <Label>Create new</Label>
+        </A>
+      </Item>
+
+      {!!dataurls.length &&
+        targets.map((target, i) => {
+          return (
+            <Item key={target._id}>
+              <A href={`/b/${target.shortId}`}>
+                {/*<ImageStatic src={images[i]} alt={target.title} />*/}
+                <ImageContainer width={200} height={200}>
+                  <Img
+                    src={dataurls[i]}
+                    alt={target.title}
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center center"
+                  />
+                </ImageContainer>
+                <Label>{target.title}</Label>
+              </A>
+            </Item>
+          );
+        })}
     </Container>
   );
 }
 
+const StyledAddIcon = styled(AddIcon)`
+  width: 70%;
+  height: 70%;
+`;
+
+const Img = styled(NextImage)`
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+`;
+
+interface ImageContainerProps {
+  readonly width: number;
+  readonly height: number;
+}
+
+const ImageContainer = styled.div<ImageContainerProps>`
+  position: relative;
+  width: ${(props) => props.width}px;
+  height: ${(props) => props.height}px;
+`;
+
+const A = styled.a`
+  //-webkit-transform: scale(1, 1);
+  //transform: scale(1, 1);
+
+  &:hover {
+    > div > span > img {
+      //background-color: rgba(255, 255, 255);
+      opacity: 0.8;
+
+      //width: 480px;
+      //height: 480px;
+      -webkit-transform: scale(1.1, 1.1);
+      transform: scale(1.1, 1.1);
+    }
+  }
+`;
+
 const Item = styled(GridItem)`
   position: relative;
   box-shadow: ${(props) => props.theme.shadow[5]};
+`;
+
+const AddContainer = styled.div<ImageContainerProps>`
+  width: ${(props) => props.width}px;
+  height: ${(props) => props.height}px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 interface LabelProps {
@@ -50,7 +132,7 @@ const Label = styled.h3<LabelProps>`
   font-size: ${(props) => props.theme.font.size.small};
 `;
 
-const Container = styled.div`
+const Container = styled(Section)`
   display: grid;
   justify-content: center;
   gap: 16px;

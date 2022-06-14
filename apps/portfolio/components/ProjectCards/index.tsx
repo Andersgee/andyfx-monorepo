@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BigCard from "ui/molecules/BigCard";
+import BigCard from "@andyfx/ui/molecules/BigCard";
 import img_svgbattle from "public/projectImages/svgbattle.png";
 import img_julia2wat from "public/projectImages/julia2wat.png";
 import img_weather from "public/projectImages/weather.jpg";

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import api from "lib/api";
-import { Button, Textarea } from "ui/atoms";
+import { Button, Textarea } from "@andyfx/ui/atoms";
 import Preview from "./Preview";
 
 type Props = {

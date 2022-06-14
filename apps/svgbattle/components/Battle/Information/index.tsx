@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import type { Target } from "targets";
+import type { Target } from "@andyfx/svgbattle-api/src/models/target";
 
 type Props = {
   className?: string;

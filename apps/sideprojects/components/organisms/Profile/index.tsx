@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Divider } from "ui/atoms";
+import { Divider } from "@andyfx/ui/atoms";
 import { useUser } from "hooks/useUser";
 import Wallposts from "molecules/Wallposts";
 
