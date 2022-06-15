@@ -7,6 +7,7 @@ type Props = {
   children: React.ReactNode;
   className?: string;
   initialShow?: boolean;
+  onChange?: (show: boolean) => void;
 };
 
 /**
@@ -14,13 +15,18 @@ type Props = {
  *
  * Children should most likely be one (or several) paragraphs.
  */
-export default function Accordion({ summary, children, initialShow = false, className }: Props) {
+export default function Accordion({ summary, children, initialShow = false, onChange, className }: Props) {
   const [show, setShow] = useState(initialShow);
-  const toggleShow = () => setShow((prev) => !prev);
+
+  const onClick = () => {
+    const newShow = !show;
+    setShow(newShow);
+    onChange?.(newShow);
+  };
 
   return (
     <Container className={className}>
-      <Button onClick={toggleShow}>
+      <Button onClick={onClick}>
         <StyledChevronIcon dir={show ? "down" : "right"} />
         {summary}
       </Button>

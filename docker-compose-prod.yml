@@ -1,6 +1,17 @@
 version: "3.8"
 
 services:
+  accounts-api:
+    image: andyfx/accounts-api
+    restart: unless-stopped
+    ports:
+      - $PORT_ACCOUNTS_API:$PORT_ACCOUNTS_API
+    build:
+      context: .
+      dockerfile: ./dockerfiles/node.Dockerfile
+      args:
+        - SCOPE=@andyfx/accounts-api
+
   accounts-mongodb:
     image: mongo
     restart: unless-stopped
@@ -10,6 +21,17 @@ services:
     volumes:
       - accounts:/data/db
 
+  sideprojects-api:
+    image: andyfx/sideprojects-api
+    restart: unless-stopped
+    ports:
+      - $PORT_SIDEPROJECTS_API:$PORT_SIDEPROJECTS_API
+    build:
+      context: .
+      dockerfile: ./dockerfiles/node.Dockerfile
+      args:
+        - SCOPE=@andyfx/sideprojects-api
+
   sideprojects-mongodb:
     image: mongo
     restart: unless-stopped
@@ -18,6 +40,17 @@ services:
       - $PORT_SIDEPROJECTS_MONGODB:$PORT_SIDEPROJECTS_MONGODB
     volumes:
       - sideprojects:/data/db
+
+  svgbattle-api:
+    image: andyfx/svgbattle-api
+    restart: unless-stopped
+    ports:
+      - $PORT_SVGBATTLE_API:$PORT_SVGBATTLE_API
+    build:
+      context: .
+      dockerfile: ./dockerfiles/node.Dockerfile
+      args:
+        - SCOPE=@andyfx/svgbattle-api
 
   svgbattle-mongodb:
     image: mongo
