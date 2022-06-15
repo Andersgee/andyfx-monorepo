@@ -15,7 +15,7 @@ services:
   accounts-mongodb:
     image: mongo
     restart: unless-stopped
-    command: mongod --port $PORT_ACCOUNTS_MONGODB
+    command: mongod --port $PORT_ACCOUNTS_MONGODB --quiet --logpath /dev/null
     ports:
       - $PORT_ACCOUNTS_MONGODB:$PORT_ACCOUNTS_MONGODB
     volumes:
@@ -32,10 +32,10 @@ services:
       args:
         - SCOPE=@andyfx/sideprojects-api
 
-  sideproject-mongodb:
+  sideprojects-mongodb:
     image: mongo
     restart: unless-stopped
-    command: mongod --port $PORT_SIDEPROJECTS_MONGODB
+    command: mongod --port $PORT_SIDEPROJECTS_MONGODB --quiet --logpath /dev/null
     ports:
       - $PORT_SIDEPROJECTS_MONGODB:$PORT_SIDEPROJECTS_MONGODB
     volumes:
@@ -55,7 +55,7 @@ services:
   svgbattle-mongodb:
     image: mongo
     restart: unless-stopped
-    command: mongod --port $PORT_SVGBATTLE_MONGODB
+    command: mongod --port $PORT_SVGBATTLE_MONGODB --quiet --logpath /dev/null
     ports:
       - $PORT_SVGBATTLE_MONGODB:$PORT_SVGBATTLE_MONGODB
     volumes:
