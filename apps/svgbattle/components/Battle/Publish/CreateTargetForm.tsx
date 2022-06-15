@@ -8,7 +8,7 @@ import type { Target } from "@andyfx/svgbattle-api/src/models/target";
 import { useCodeContext } from "contexts/Code";
 import { useRouter } from "next/router";
 
-export type Values = Omit<Target, "_id" | "shortId">;
+export type Values = Omit<Target, "_id" | "shortId" | "creatorId">;
 
 type Props = {
   disabled?: boolean;
