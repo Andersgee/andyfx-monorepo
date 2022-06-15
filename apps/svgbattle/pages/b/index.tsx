@@ -11,7 +11,6 @@ interface Props {
 }
 
 const Page: NextPage<Props> = ({ targets }: Props) => {
-  console.log("Page, targets:", targets);
   return (
     <>
       <Head

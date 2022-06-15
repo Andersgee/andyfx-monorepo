@@ -1,0 +1,79 @@
+version: "3.8"
+#sudo docker-compose -f docker-compose.production.yml build
+#sudo docker-compose -f docker-compose.production.yml up -d
+
+#attach:
+#sudo docker-compose -f docker-compose.production.yml logs -f -t
+#detach:
+#ctrl+z
+services:
+  accounts-mongodb:
+    image: mongo
+    restart: unless-stopped
+    command: mongod --port $PORT_ACCOUNTS_MONGODB --quiet --logpath /dev/null
+    #ports:
+    #  - $PORT_ACCOUNTS_MONGODB:$PORT_ACCOUNTS_MONGODB
+    volumes:
+      - accounts:/data/db
+
+  accounts-api:
+    depends_on:
+      - accounts-mongodb
+    image: andyfx/accounts-api
+    restart: unless-stopped
+    ports:
+      - $PORT_ACCOUNTS_API:$PORT_ACCOUNTS_API
+    build:
+      context: .
+      dockerfile: ./dockerfiles/node.Dockerfile
+      args:
+        - SCOPE=@andyfx/accounts-api
+
+  sideprojects-mongodb:
+    image: mongo
+    restart: unless-stopped
+    command: mongod --port $PORT_SIDEPROJECTS_MONGODB --quiet --logpath /dev/null
+    #ports:
+    #  - $PORT_SIDEPROJECTS_MONGODB:$PORT_SIDEPROJECTS_MONGODB
+    volumes:
+      - sideprojects:/data/db
+
+  sideprojects-api:
+    depends_on:
+      - sideprojects-mongodb
+    image: andyfx/sideprojects-api
+    restart: unless-stopped
+    ports:
+      - $PORT_SIDEPROJECTS_API:$PORT_SIDEPROJECTS_API
+    build:
+      context: .
+      dockerfile: ./dockerfiles/node.Dockerfile
+      args:
+        - SCOPE=@andyfx/sideprojects-api
+
+  svgbattle-mongodb:
+    image: mongo
+    restart: unless-stopped
+    command: mongod --port $PORT_SVGBATTLE_MONGODB --quiet --logpath /dev/null
+    #ports:
+    #  - $PORT_SVGBATTLE_MONGODB:$PORT_SVGBATTLE_MONGODB
+    volumes:
+      - svgbattle:/data/db
+
+  svgbattle-api:
+    depends_on:
+      - svgbattle-mongodb
+    image: andyfx/svgbattle-api
+    restart: unless-stopped
+    ports:
+      - $PORT_SVGBATTLE_API:$PORT_SVGBATTLE_API
+    build:
+      context: .
+      dockerfile: ./dockerfiles/node.Dockerfile
+      args:
+        - SCOPE=@andyfx/svgbattle-api
+
+volumes:
+  accounts:
+  sideprojects:
+  svgbattle:
