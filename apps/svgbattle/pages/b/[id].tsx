@@ -22,7 +22,7 @@ const Page: NextPage<Props> = ({ target }: Props) => {
         domainUrl="https://svgbattle.andyfx.se"
         url={`https://svgbattle.andyfx.se/battle/${isFallback ? "" : target.shortId}`}
       />
-      <Layout>{isFallback ? <Title>generating static site.</Title> : <Battle target={target} />}</Layout>
+      <Layout>{isFallback ? <Title>ssg</Title> : <Battle target={target} />}</Layout>
     </CodeProvider>
   );
 };
