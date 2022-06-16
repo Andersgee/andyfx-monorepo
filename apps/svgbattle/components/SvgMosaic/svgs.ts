@@ -112,6 +112,11 @@ import RyuksApple from "public/svgbattle/106.svg";
 import SealingWand from "public/svgbattle/107.svg";
 import ClowCard from "public/svgbattle/108.svg";
 
+import Curtain from "public/svgbattle/109.svg";
+import Sunrays from "public/svgbattle/110.svg";
+import RainDrops from "public/svgbattle/111.svg";
+import Chevron from "public/svgbattle/112.svg";
+
 const svgs = [
   { name: "Simply Square", Svg: SimplySquare },
   { name: "Carrom", Svg: Carrom },
@@ -230,6 +235,10 @@ const svgs = [
   { name: "Ryuk's Apple", Svg: RyuksApple },
   { name: "Sealing Wand", Svg: SealingWand },
   { name: "Clow Card", Svg: ClowCard },
+  { name: "Curtain", Svg: Curtain },
+  { name: "Sunrays", Svg: Sunrays },
+  { name: "Rain Drops", Svg: RainDrops },
+  { name: "Chevron", Svg: Chevron },
 ];
 
 export default svgs;

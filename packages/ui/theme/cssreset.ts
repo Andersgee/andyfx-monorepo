@@ -53,11 +53,13 @@ export const cssreset = css`
   }
 
   svg {
-    shape-rendering: crispEdges;
+    //shape-rendering: crispEdges;
+    shape-rendering: geometricPrecision;
     text-rendering: geometricPrecision;
     image-rendering: optimizeQuality;
     display: block;
   }
+  /*
   svg circle,
   svg line,
   svg path,
@@ -67,6 +69,7 @@ export const cssreset = css`
   svg text {
     shape-rendering: geometricPrecision;
   }
+  */
 
   /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
   @media (prefers-reduced-motion: reduce) {

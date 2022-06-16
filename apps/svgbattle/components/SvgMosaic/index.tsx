@@ -52,6 +52,22 @@ export default function SvgMosaic({ className }: Props) {
   );
 }
 
+export function SvgMosaicSimple({ className }: Props) {
+  return (
+    <div className={className}>
+      {svgs.map(({ name, Svg }, i) => (
+        <SimpleDiv key={name}>
+          <Svg role="img" width="400px" height="300px" aria-hidden={false} aria-label={name} />
+        </SimpleDiv>
+      ))}
+    </div>
+  );
+}
+
+const SimpleDiv = styled.div`
+  margin-top: 1rem;
+`;
+
 const Item = styled(GridItem)`
   position: relative;
   box-shadow: ${(props) => props.theme.shadow[5]};

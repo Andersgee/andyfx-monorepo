@@ -1,0 +1,24 @@
+<svg viewBox="0 0 400 300">
+
+<clipPath id="chevron-c">
+<rect y="15" width="100%" height="200"/>
+</clipPath>
+
+<defs>
+<path id="chevron-p" stroke="#293D7E" 
+clip-path="url(#chevron-c)"
+fill="none"
+stroke-width="23"
+d="M 75 0
+l 125 100
+l 125 -100
+"
+/>
+</defs>
+
+<rect fill="#6592CF" width="100%" height="100%"/> 
+<use href="#chevron-p" y="40"/> 
+<use href="#chevron-p" y="90"/>
+<use href="#chevron-p" y="140"/>
+
+</svg>

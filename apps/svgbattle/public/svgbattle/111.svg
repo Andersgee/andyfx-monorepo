@@ -1,0 +1,6 @@
+<svg viewBox="0 0 400 300">
+<rect fill="#F3AC3C" width="100%" height="100%"/> 
+<path id="raindrop-p" fill="#254241" d="M 200 164 l 30 30 a 40 40 0 1 1 -60 0 z"/> 
+<use href="#raindrop-p" transform="rotate(180, 200, 150)"/>
+<use href="#raindrop-p" y="10" transform="rotate(90, 200, 150)"/>
+</svg>
