@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { AndyfxIcon } from "@andyfx/ui/icons";
 import { Navbar, ToggleThemeButton } from "@andyfx/ui/molecules";
 import { Link } from "@andyfx/ui/atoms";
+import AccountButton from "components/AccountButton";
 
 interface Props {
   className?: string;
@@ -14,6 +15,7 @@ export default function Layout({ className, children }: Props) {
     <Container className={className}>
       <Nav>
         <ToggleThemeButton />
+        <AccountButton />
       </Nav>
       <Main>{children}</Main>
       <Footer>

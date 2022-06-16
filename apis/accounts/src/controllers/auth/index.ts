@@ -93,6 +93,7 @@ export async function google(req: Request, res: Response) {
         googleId: googleUser.sub,
         name: googleUser.name,
         email: googleUser.email,
+        verified: true,
       });
       res.cookie("id", user.id, COOKIE_OPTIONS);
       return res.status(200).json({ id: user.id });

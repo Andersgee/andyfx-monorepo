@@ -3,8 +3,7 @@ import styled from "styled-components";
 import { Accordion } from "@andyfx/ui/molecules";
 import api from "lib/api";
 import CreateTargetForm from "./CreateTargetForm";
-import LoginDialog from "components/LoginForm/Dialog";
-//import LoginForm from "components/LoginForm";
+import LoginDialog from "components/LoginDialog";
 import { useUserContext } from "contexts/User";
 
 type Props = {

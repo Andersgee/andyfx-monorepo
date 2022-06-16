@@ -9,11 +9,15 @@ interface Props {
   user?: User;
   getMyUser: () => void;
   logout: () => void;
+  showDialog: boolean;
+  setShowDialog: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const defaultValue: Props = {
   getMyUser: () => {},
   logout: () => {},
+  showDialog: false,
+  setShowDialog: () => {},
 };
 
 export const UserContext = createContext<Props>(defaultValue);
@@ -24,6 +28,7 @@ interface ProviderProps {
 
 export function UserProvider({ children }: ProviderProps) {
   const [user, setUser] = useState<User | undefined>(undefined);
+  const [showDialog, setShowDialog] = useState<boolean>(false);
 
   const getMyUser = async () => {
     try {
@@ -59,7 +64,7 @@ export function UserProvider({ children }: ProviderProps) {
   };
 
   return (
-    <UserContext.Provider value={{ user, getMyUser, logout }}>
+    <UserContext.Provider value={{ user, getMyUser, logout, showDialog, setShowDialog }}>
       {children}
       <Script
         src="https://accounts.google.com/gsi/client"
