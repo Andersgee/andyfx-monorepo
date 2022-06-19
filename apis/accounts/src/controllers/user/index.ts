@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { UserModel } from "#models/user";
 //import mongoose from "mongoose";
 
+/*
 export async function readAll(req: Request, res: Response) {
   try {
     const allUsers = await UserModel.find().lean();
@@ -10,6 +11,7 @@ export async function readAll(req: Request, res: Response) {
     return res.status(500).json({ message: "Something went wrong." });
   }
 }
+*/
 
 export async function readPublic(req: Request, res: Response) {
   try {
@@ -48,7 +50,7 @@ export async function readMe(req: Request, res: Response) {
     if (!user) {
       return res.status(404).json({ message: "Not found." });
     }
-    //delete user.password //dont return the hashed password?
+    user.password = "***"; //dont return the hashed password
     return res.status(200).json(user);
   } catch (error) {
     res.status(409).json({ message: "Something went wrong." });

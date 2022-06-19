@@ -18,6 +18,7 @@ const COOKIE_OPTIONS_DEV: CookieOptions = {
   signed: true,
   secure: false,
   sameSite: "lax",
+  path: "/",
 };
 
 const COOKIE_OPTIONS_PROD: CookieOptions = {
@@ -27,6 +28,7 @@ const COOKIE_OPTIONS_PROD: CookieOptions = {
   signed: true, //signed with cookieParser secret
   secure: true, //https only
   sameSite: "lax",
+  path: "/",
 };
 
 const COOKIE_OPTIONS = process.env.NODE_ENV === "production" ? COOKIE_OPTIONS_PROD : COOKIE_OPTIONS_DEV;
@@ -64,8 +66,11 @@ export async function login(req: Request, res: Response) {
  */
 export async function logout(req: Request, res: Response) {
   try {
-    //note: clearCookie options must be same as when it was created. (except expires and maxAge which are ignored when clearing)
-    res.clearCookie("id", COOKIE_OPTIONS);
+    //note: clearCookie options must be same as when it was created.
+    //note2: clearCookie will not actually delete the cookie if maxAge (or expires) is provided.
+    // It would instead just clear the value aka set it to empty string.
+    // see: https://github.com/expressjs/express/issues/4252#issuecomment-619222441
+    res.clearCookie("id", { ...COOKIE_OPTIONS, maxAge: undefined });
     return res.status(200).json({ message: "Signed out." });
   } catch (error) {
     return res.status(500).json({ message: "Something went wrong." });
@@ -93,7 +98,7 @@ export async function google(req: Request, res: Response) {
         googleId: googleUser.sub,
         name: googleUser.name,
         email: googleUser.email,
-        verified: true,
+        verified: googleUser.email_verified,
       });
       res.cookie("id", user.id, COOKIE_OPTIONS);
       return res.status(200).json({ id: user.id });

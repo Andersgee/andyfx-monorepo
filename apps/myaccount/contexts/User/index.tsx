@@ -10,15 +10,11 @@ interface Props {
   user?: User;
   getMyUser: () => void;
   logout: () => void;
-  showDialog: boolean;
-  setShowDialog: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const defaultValue: Props = {
   getMyUser: () => {},
   logout: () => {},
-  showDialog: false,
-  setShowDialog: () => {},
 };
 
 export const UserContext = createContext<Props>(defaultValue);
@@ -29,7 +25,6 @@ interface ProviderProps {
 
 export function UserProvider({ children }: ProviderProps) {
   const [user, setUser] = useState<User | undefined>(undefined);
-  const [showDialog, setShowDialog] = useState<boolean>(false);
 
   const getMyUser = async () => {
     try {
@@ -41,13 +36,15 @@ export function UserProvider({ children }: ProviderProps) {
   };
 
   useEventListener("focus", getMyUser);
+
   useEffect(() => {
     getMyUser();
   }, []);
 
   const logout = async () => {
     try {
-      await accounts.remove("/auth");
+      const confirmation = await accounts.remove("/auth");
+      console.log(confirmation);
       setUser(undefined);
       window?.google?.accounts.id.disableAutoSelect();
     } catch (err) {
@@ -66,7 +63,7 @@ export function UserProvider({ children }: ProviderProps) {
   };
 
   return (
-    <UserContext.Provider value={{ user, getMyUser, logout, showDialog, setShowDialog }}>
+    <UserContext.Provider value={{ user, getMyUser, logout }}>
       {children}
       <Script
         src="https://accounts.google.com/gsi/client"

@@ -20,6 +20,8 @@ const ALLOWED_ORIGINS = [
   "https://svgbattle.andyfx.net",
   "http://localhost:3002",
   "https://sideprojects.andyfx.net",
+  "http://localhost:3003",
+  "https://myaccount.andyfx.net",
 ];
 
 app.use(
