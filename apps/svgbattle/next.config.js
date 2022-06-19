@@ -2,6 +2,7 @@ const withPlugins = require("next-compose-plugins");
 const withTM = require("next-transpile-modules")(["@andyfx/ui"]);
 const svgrconfig = require("@andyfx/configs/webpack-svgr");
 const assetsourceconfig = require("@andyfx/configs/webpack-assetsource");
+const { withPlausibleProxy } = require("next-plausible");
 
 //const path = require("path");
 //const isDev = process.env.NODE_ENV !== "production";
@@ -26,4 +27,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins([withTM], nextConfig);
+module.exports = withPlugins([withTM, withPlausibleProxy], nextConfig);
